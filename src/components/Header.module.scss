@@ -42,8 +42,12 @@
 }
 
 @keyframes slideIn {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .logo {
@@ -124,7 +128,7 @@
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       bottom: -6px;

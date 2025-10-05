@@ -25,7 +25,11 @@ const Header = () => {
     { href: 'https://twitter.com', icon: 'logo-twitter', label: 'Twitter' },
     { href: 'https://facebook.com', icon: 'logo-facebook', label: 'Facebook' },
     { href: 'https://dribbble.com', icon: 'logo-dribbble', label: 'Dribbble' },
-    { href: 'https://instagram.com', icon: 'logo-instagram', label: 'Instagram' },
+    {
+      href: 'https://instagram.com',
+      icon: 'logo-instagram',
+      label: 'Instagram',
+    },
     { href: 'https://youtube.com', icon: 'logo-youtube', label: 'YouTube' },
   ];
 
@@ -59,7 +63,7 @@ const Header = () => {
   };
 
   return (
-    <header 
+    <header
       className={`${styles.header} ${isScrolled ? styles.active : ''}`}
       data-header
     >
@@ -81,7 +85,7 @@ const Header = () => {
           />
         </Link>
 
-        <nav 
+        <nav
           className={`${styles.navbar} ${isNavOpen ? styles.active : ''}`}
           data-navbar
         >

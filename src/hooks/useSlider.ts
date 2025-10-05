@@ -8,10 +8,10 @@ interface UseSliderOptions {
   totalSlides: number;
 }
 
-export const useSlider = ({ 
-  autoPlay = false, 
+export const useSlider = ({
+  autoPlay = false,
   autoPlayInterval = 3000,
-  totalSlides 
+  totalSlides,
 }: UseSliderOptions) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 

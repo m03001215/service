@@ -8,7 +8,7 @@
 
   .container {
     @include grid-list;
-    
+
     @include desktop-up {
       grid-template-columns: repeat(4, 1fr);
     }
@@ -48,7 +48,7 @@
     color: $violet-blue-crayola;
   }
 
-  &[aria-current="page"] {
+  &[aria-current='page'] {
     color: $violet-blue-crayola;
     font-weight: $fw-700;
   }

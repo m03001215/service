@@ -6,7 +6,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { LayoutProps } from '@/types';
 
-export default function Layout({ children, showPreloader = false }: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   const { scrollY, isAtTop } = useScroll();
 
   // Add smooth scroll behavior and manage body classes based on scroll

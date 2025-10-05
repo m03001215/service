@@ -15,7 +15,7 @@ export const useScroll = () => {
 
     handleScroll(); // Initial check
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

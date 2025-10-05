@@ -107,7 +107,7 @@ $xl-desktop: 1399px;
 
 @mixin card-transition {
   transition: $transition-3;
-  
+
   &:hover {
     transform: translateY(-6px);
   }

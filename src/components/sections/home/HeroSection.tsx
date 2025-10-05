@@ -33,7 +33,7 @@ const HeroSection = () => {
   });
 
   return (
-    <section 
+    <section
       className={`section ${styles.hero} has-bg-image`}
       aria-label="home"
       style={{ backgroundImage: "url('/assets/images/hero-bg.jpg')" }}
@@ -45,7 +45,8 @@ const HeroSection = () => {
           </h1>
 
           <p className={styles.heroText}>
-            We're a creative company that focuses on establishing long-term relationships with customers.
+            We&apos;re a creative company that focuses on establishing long-term
+            relationships with customers.
           </p>
 
           <div className={styles.btnWrapper}>
@@ -61,7 +62,7 @@ const HeroSection = () => {
 
         <div className={styles.heroSlider} data-slider>
           <div className={styles.sliderInner}>
-            <ul 
+            <ul
               className={styles.sliderContainer}
               style={{
                 transform: `translateX(-${currentSlide * 100}%)`,
@@ -71,9 +72,14 @@ const HeroSection = () => {
                 <li key={item.id} className={styles.sliderItem}>
                   {item.hasPlayButton ? (
                     <div className={styles.heroCard}>
-                      <figure 
-                        className="img-holder" 
-                        style={{ '--width': 575, '--height': 550 } as React.CSSProperties}
+                      <figure
+                        className="img-holder"
+                        style={
+                          {
+                            '--width': 575,
+                            '--height': 550,
+                          } as React.CSSProperties
+                        }
                       >
                         <Image
                           src={item.image}
@@ -85,21 +91,25 @@ const HeroSection = () => {
                         />
                       </figure>
 
-                      <button 
-                        className={styles.playBtn} 
+                      <button
+                        className={styles.playBtn}
                         aria-label="play adex intro"
                         onClick={() => {
                           // Handle video play logic here
-                          console.log('Play video');
                         }}
                       >
                         <ion-icon name="play" aria-hidden={true}></ion-icon>
                       </button>
                     </div>
                   ) : (
-                    <figure 
-                      className="img-holder" 
-                      style={{ '--width': 575, '--height': 550 } as React.CSSProperties}
+                    <figure
+                      className="img-holder"
+                      style={
+                        {
+                          '--width': 575,
+                          '--height': 550,
+                        } as React.CSSProperties
+                      }
                     >
                       <Image
                         src={item.image}
@@ -118,7 +128,7 @@ const HeroSection = () => {
 
           {sliderItems.length > 1 && (
             <>
-              <button 
+              <button
                 className={`${styles.sliderBtn} ${styles.prev}`}
                 aria-label="slide to previous"
                 onClick={prevSlide}
@@ -126,7 +136,7 @@ const HeroSection = () => {
                 <ion-icon name="arrow-back"></ion-icon>
               </button>
 
-              <button 
+              <button
                 className={`${styles.sliderBtn} ${styles.next}`}
                 aria-label="slide to next"
                 onClick={nextSlide}

@@ -9,31 +9,38 @@ const ServiceSection = () => {
     {
       icon: 'call-outline',
       title: '24/7 Support',
-      description: 'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
+      description:
+        'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
       href: '/services#support',
     },
     {
       icon: 'shield-checkmark-outline',
       title: 'Secure Payments',
-      description: 'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
+      description:
+        'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
       href: '/services#payments',
     },
     {
       icon: 'cloud-download-outline',
       title: 'Daily Updates',
-      description: 'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
+      description:
+        'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
       href: '/services#updates',
     },
     {
       icon: 'pie-chart-outline',
       title: 'Market Research',
-      description: 'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
+      description:
+        'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
       href: '/services#research',
     },
   ];
 
   return (
-    <section className={`section ${styles.service}`} aria-labelledby="service-label">
+    <section
+      className={`section ${styles.service}`}
+      aria-labelledby="service-label"
+    >
       <div className="container">
         <p className="section-subtitle" id="service-label">
           What We Do?
@@ -57,7 +64,10 @@ const ServiceSection = () => {
 
                 <Link href={service.href} className={styles.btnText}>
                   <span className="span">Learn More</span>
-                  <ion-icon name="arrow-forward-outline" aria-hidden={true}></ion-icon>
+                  <ion-icon
+                    name="arrow-forward-outline"
+                    aria-hidden={true}
+                  ></ion-icon>
                 </Link>
               </div>
             </li>

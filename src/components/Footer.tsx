@@ -15,14 +15,18 @@ const Footer = () => {
     { href: 'https://facebook.com', icon: 'logo-facebook', label: 'Facebook' },
     { href: 'https://twitter.com', icon: 'logo-twitter', label: 'Twitter' },
     { href: 'https://dribbble.com', icon: 'logo-dribbble', label: 'Dribbble' },
-    { href: 'https://instagram.com', icon: 'logo-instagram', label: 'Instagram' },
+    {
+      href: 'https://instagram.com',
+      icon: 'logo-instagram',
+      label: 'Instagram',
+    },
     { href: 'https://youtube.com', icon: 'logo-youtube', label: 'YouTube' },
   ];
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle newsletter subscription logic here
-    console.log('Newsletter subscription:', newsletterData);
+    // Handle newsletter subscription
     setNewsletterData({ email: '' });
   };
 
@@ -133,10 +137,14 @@ const Footer = () => {
           <p className={`h4 ${styles.footerListTitle}`}>Our Newsletter</p>
 
           <p className={styles.footerText}>
-            Subscribe to our newsletter to get our news & deals delivered to you.
+            Subscribe to our newsletter to get our news & deals delivered to
+            you.
           </p>
 
-          <form onSubmit={handleNewsletterSubmit} className={styles.inputWrapper}>
+          <form
+            onSubmit={handleNewsletterSubmit}
+            className={styles.inputWrapper}
+          >
             <input
               type="email"
               name="email_address"
