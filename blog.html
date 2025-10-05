@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog • Adex</title>
+  <meta name="title" content="Blog • Adex">
+  <meta name="description" content="Read the latest product, design, and engineering insights from the Adex team.">
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="preload" as="image" href="./assets/images/hero-slide-3.jpg">
+</head>
+
+<body>
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logo-light.svg" width="74" height="24" alt="Adex home" class="logo-light">
+
+        <img src="./assets/images/logo-dark.svg" width="74" height="24" alt="Adex home" class="logo-dark">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo-light.svg" width="74" height="24" alt="Adex home">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="about.html" class="navbar-link">About</a>
+          </li>
+
+          <li>
+            <a href="services.html" class="navbar-link">Services</a>
+          </li>
+
+          <li>
+            <a href="projects.html" class="navbar-link">Projects</a>
+          </li>
+
+          <li>
+            <a href="blog.html" class="navbar-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="navbar-link">Contact</a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <a href="mailto:info@email.com" class="contact-link">info@email.com</a>
+
+          <a href="tel:001234567890" class="contact-link">00 (123) 456 78 90</a>
+        </div>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://twitter.com" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://facebook.com" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://dribbble.com" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-dribbble"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://instagram.com" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://youtube.com" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <a href="contact.html#quote" class="btn btn-primary">Free Trial</a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <section class="page-hero has-bg-image" aria-label="Adex blog"
+        style="background-image: url('./assets/images/hero-slide-3.jpg')">
+        <div class="container">
+          <p class="section-subtitle">Ideas & insights</p>
+          <h1 class="h1 page-title">Stories from the product teams shipping what’s next.</h1>
+          <p class="section-text">
+            Practical playbooks, trend analysis, and field notes to help you launch with confidence and iterate with
+            purpose.
+          </p>
+
+          <div class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html" class="breadcrumb-link">Home</a>
+            <span class="breadcrumb-divider">/</span>
+            <span class="breadcrumb-current">Blog</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section blog" aria-labelledby="blog-list">
+        <div class="container">
+          <p class="section-subtitle" id="blog-list">Latest posts</p>
+          <h2 class="h2 section-title">Sharp perspectives on design, engineering, and growth.</h2>
+
+          <ul class="grid-list">
+            <li>
+              <article class="project-card blog-card">
+                <figure class="card-banner img-holder" style="--width: 560; --height: 350;">
+                  <img src="./assets/images/blog-1.jpg" width="560" height="350" loading="lazy"
+                    alt="Product metrics that matter" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="blog-product-metrics.html" class="card-title">Product metrics that matter in early stage</a>
+                  </h3>
+                  <p class="card-text">
+                    Move beyond vanity dashboards with a framework for mapping moment-based metrics to each phase of the
+                    product lifecycle.
+                  </p>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+                      <time class="meta-text" datetime="2024-02-12">12 Feb 2024</time>
+                    </li>
+                    <li class="card-meta-item">
+                      <ion-icon name="person-circle-outline" aria-hidden="true"></ion-icon>
+                      <span class="meta-text">Tara V.</span>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="project-card blog-card">
+                <figure class="card-banner img-holder" style="--width: 560; --height: 350;">
+                  <img src="./assets/images/blog-2.jpg" width="560" height="350" loading="lazy"
+                    alt="Design systems for blended teams" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="blog-design-systems.html" class="card-title">Scaling design systems for blended teams</a>
+                  </h3>
+                  <p class="card-text">
+                    Lessons from rolling out reusable UI foundations that keep quality high while shipping faster across
+                    web and native ecosystems.
+                  </p>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+                      <time class="meta-text" datetime="2024-06-28">28 Jun 2024</time>
+                    </li>
+                    <li class="card-meta-item">
+                      <ion-icon name="person-circle-outline" aria-hidden="true"></ion-icon>
+                      <span class="meta-text">Zane L.</span>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="project-card blog-card">
+                <figure class="card-banner img-holder" style="--width: 560; --height: 350;">
+                  <img src="./assets/images/blog-3.jpg" width="560" height="350" loading="lazy"
+                    alt="Operationalizing experimentation" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="blog-experimentation.html" class="card-title">Operationalizing experimentation at scale</a>
+                  </h3>
+                  <p class="card-text">
+                    Discover how to build a responsible experimentation culture that balances speed with statistical
+                    rigor.
+                  </p>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+                      <time class="meta-text" datetime="2024-08-09">09 Aug 2024</time>
+                    </li>
+                    <li class="card-meta-item">
+                      <ion-icon name="person-circle-outline" aria-hidden="true"></ion-icon>
+                      <span class="meta-text">Isabella R.</span>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="project-card blog-card">
+                <figure class="card-banner img-holder" style="--width: 560; --height: 350;">
+                  <img src="./assets/images/blog-4.jpg" width="560" height="350" loading="lazy"
+                    alt="Revamping retention loops" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="blog-retention.html" class="card-title">Designing retention loops for modern mobile apps</a>
+                  </h3>
+                  <p class="card-text">
+                    Map triggers, actions, rewards, and investment to craft mobile experiences that keep customers coming
+                    back with intention.
+                  </p>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+                      <time class="meta-text" datetime="2024-09-15">15 Sep 2024</time>
+                    </li>
+                    <li class="card-meta-item">
+                      <ion-icon name="person-circle-outline" aria-hidden="true"></ion-icon>
+                      <span class="meta-text">Darius M.</span>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section newsletter" aria-labelledby="newsletter-title">
+        <div class="container">
+          <div class="content-grid">
+            <div>
+              <p class="section-subtitle" id="newsletter-title">Stay ahead</p>
+              <h2 class="h2 section-title">Get fresh thinking delivered monthly.</h2>
+              <p class="section-text">Sign up to join thousands of operators receiving actionable tactics on product,
+                design, data, and go-to-market.</p>
+            </div>
+            <form action="" class="stacked-form">
+              <div class="form-group">
+                <label class="form-label" for="newsletter-name">Name</label>
+                <input id="newsletter-name" type="text" name="name" placeholder="Jane Doe" required class="input-field">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="newsletter-email">Email</label>
+                <input id="newsletter-email" type="email" name="email" placeholder="you@email.com" required class="input-field">
+              </div>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container grid-list">
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo-light.svg" width="74" height="24" alt="Adex home">
+        </a>
+
+        <p class="footer-text">
+          &copy; 2022 codewithsadee. <br> All rights reserved.
+        </p>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://facebook.com" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://twitter.com" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://dribbble.com" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-dribbble"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://instagram.com" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://youtube.com" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="h4 footer-list-title">Get in Touch</p>
+        </li>
+
+        <li>
+          <address class="footer-text">
+            Moonshine St. 14/05 Light City, London, United Kingdom
+          </address>
+        </li>
+
+        <li>
+          <a href="mailto:info@email.com" class="footer-link">info@email.com</a>
+        </li>
+
+        <li>
+          <a href="tel:001234567890" class="footer-link">00 (123) 456 78 90</a>
+        </li>
+
+      </ul>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="h4 footer-list-title">Learn More</p>
+        </li>
+
+        <li>
+          <a href="about.html" class="footer-link">About Us</a>
+        </li>
+
+        <li>
+          <a href="about.html#story" class="footer-link">Our Story</a>
+        </li>
+
+        <li>
+          <a href="services.html" class="footer-link">Services</a>
+        </li>
+
+        <li>
+          <a href="projects.html" class="footer-link">Projects</a>
+        </li>
+
+        <li>
+          <a href="terms.html" class="footer-link">Terms of Use</a>
+        </li>
+
+        <li>
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        </li>
+
+      </ul>
+
+      <div class="footer-list">
+
+        <p class="h4 footer-list-title">Our Newsletter</p>
+
+        <p class="footer-text">
+          Subscribe to our newsletter to get our news & deals delivered to you.
+        </p>
+
+        <form action="" class="input-wrapper">
+          <input type="email" name="email_address" placeholder="Email Address" required class="input-field">
+
+          <button type="submit" class="submit-btn">Join</button>
+        </form>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
