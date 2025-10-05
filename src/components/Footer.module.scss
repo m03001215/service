@@ -1,0 +1,110 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.footer {
+  background-color: $charcoal;
+  padding-block: 60px 100px;
+  color: $light-gray;
+
+  .container {
+    @include grid-list;
+    
+    @include desktop-up {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.footerBrand {
+  .footerText {
+    margin-block: 20px;
+  }
+
+  .socialList {
+    color: $white;
+  }
+}
+
+.footerList {
+  margin-block-start: 24px;
+
+  .h4 {
+    color: $white;
+    margin-block-end: 16px;
+  }
+}
+
+.footerText {
+  color: $light-gray;
+  line-height: 1.6;
+}
+
+.footerLink {
+  padding-block: 4px;
+  transition: $transition-1;
+  color: $light-gray;
+
+  &:is(:hover, :focus-visible) {
+    color: $violet-blue-crayola;
+  }
+
+  &[aria-current="page"] {
+    color: $violet-blue-crayola;
+    font-weight: $fw-700;
+  }
+}
+
+.inputWrapper {
+  position: relative;
+  margin-block-start: 25px;
+  display: flex;
+}
+
+.inputField {
+  background-color: $white_a3;
+  color: $light-gray;
+  font-size: $fs-7;
+  padding: 12px 16px;
+  border: 1px solid $dark-cornflower-blue_a7;
+  border-radius: $radius-6;
+  box-shadow: $shadow-3;
+  outline: none;
+  flex: 1;
+
+  &::placeholder {
+    color: inherit;
+  }
+
+  &:focus {
+    border-color: $violet-blue-crayola;
+  }
+}
+
+.submitBtn {
+  border-radius: 0 $radius-6 $radius-6 0;
+  background-color: $violet-blue-crayola;
+  color: $white;
+  padding-inline: 24px;
+  font-weight: $fw-700;
+  transition: $transition-1;
+
+  &:is(:hover, :focus-visible) {
+    background-color: $blue-crayola;
+  }
+}
+
+// Footer list title styles
+.footerListTitle {
+  color: $white;
+  margin-block-end: 16px;
+}
+
+// Responsive styles
+@include desktop-up {
+  .footerBrand {
+    .footerText {
+      padding-inline-end: 100px;
+      margin-block-end: 16px;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.service {
+  text-align: center;
+
+  .sectionTitle {
+    margin-block-end: 50px;
+  }
+}
+
+.serviceCard {
+  padding: 40px;
+  box-shadow: $shadow-2;
+  border-radius: $radius-6;
+  @include card-transition;
+
+  .cardIcon {
+    width: 60px;
+    height: 60px;
+    background-color: $violet-blue-crayola;
+    @include flex-center;
+    color: $white;
+    font-size: 2.5rem;
+    border-radius: $radius-circle;
+    margin-inline: auto;
+
+    ion-icon {
+      --ionicon-stroke-width: 50px;
+    }
+  }
+
+  .h4 {
+    margin-block: 16px 10px;
+  }
+
+  .cardText {
+    color: $black-coral;
+    line-height: 1.6;
+  }
+}
+
+.btnText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-block-start: 10px;
+  color: $violet-blue-crayola;
+  font-weight: $fw-700;
+  transition: $transition-1;
+
+  &:is(:hover, :focus-visible) {
+    opacity: 0.9;
+  }
+}
+
+// Responsive styles
+@include xl-desktop-up {
+  .service {
+    .gridList {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

@@ -1,0 +1,137 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.hero {
+  padding-block-start: calc(#{$section-padding} + 70px);
+  text-align: center;
+
+  .container {
+    display: grid;
+    gap: 70px;
+  }
+}
+
+.heroContent {
+  .h1 {
+    color: $white;
+  }
+}
+
+.heroText {
+  font-size: $fs-5;
+  color: $white;
+  margin-block: 24px 36px;
+}
+
+.btnWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.heroSlider,
+.heroCard {
+  position: relative;
+}
+
+.heroCard {
+  .playBtn {
+    @include absolute-center;
+    @include button-reset;
+    background-color: $white;
+    color: $charcoal;
+    font-size: 2rem;
+    padding: 25px;
+    border-radius: $radius-circle;
+    transition: $transition-1;
+    animation: pulse 2s ease infinite;
+
+    &:is(:hover, :focus-visible) {
+      color: $violet-blue-crayola;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% { 
+    box-shadow: 0 0 0 0 $white-a70; 
+  }
+  75% { 
+    box-shadow: 0 0 0 20px transparent; 
+  }
+}
+
+.sliderInner {
+  border-radius: $radius-10;
+  overflow: hidden;
+}
+
+.sliderContainer {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  transition: $transition-2;
+}
+
+.sliderItem {
+  min-width: 100%;
+  width: 100%;
+  border-radius: $radius-10;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.sliderBtn {
+  @include button-reset;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: $white-a70;
+  color: $charcoal;
+  font-size: 2rem;
+  padding: 12px;
+  border-radius: $radius-circle;
+  transition: $transition-1;
+  z-index: 1;
+
+  &:is(:hover, :focus-visible) {
+    background-color: $white;
+  }
+
+  &.prev {
+    left: 20px;
+  }
+
+  &.next {
+    right: 20px;
+  }
+}
+
+// Responsive styles
+@include desktop-up {
+  .hero {
+    padding-block-start: calc(#{$section-padding} + 50px);
+    text-align: left;
+
+    .container {
+      grid-template-columns: 1fr 0.8fr;
+      align-items: center;
+    }
+  }
+
+  .heroContent {
+    max-width: unset;
+    margin-inline: 0;
+  }
+
+  .btnWrapper {
+    justify-content: flex-start;
+  }
+
+  .heroText {
+    padding-inline-end: 100px;
+  }
+}

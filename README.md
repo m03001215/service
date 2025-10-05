@@ -1,82 +1,208 @@
-<div align="center">
-  
-  ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/adex)
-  ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/adex?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/adex?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-  [![YouTube Video Views](https://img.shields.io/youtube/views/5Bl3CCizSRQ?style=social)](https://youtu.be/5Bl3CCizSRQ)
+# Adex Digital Studio - Agency Website
 
-  <br />
-  <br />
+A modern, responsive agency website built with Next.js 14, TypeScript, and SCSS. This project showcases digital services, portfolio projects, and provides a professional online presence for Adex Digital Studio.
 
-  <h2 align="center">Adex - Business Agency Website</h2>
+## 🚀 Features
 
-  Adex is a fully responsive business agency website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
+- **Server-Side Rendering (SSR)** with Next.js 14
+- **TypeScript** for type safety and better developer experience
+- **SCSS Modules** for component-scoped styling
+- **Responsive Design** optimized for all devices
+- **SEO Optimized** with Next.js Metadata API
+- **Image Optimization** with Next.js Image component
+- **Interactive Components** with smooth animations
+- **Modern Performance** with optimized loading and caching
 
-  <a href="https://codewithsadee.github.io/adex/"><strong>➥ Live Demo</strong></a>
+## 🛠 Tech Stack
 
-</div>
+- **Framework:** Next.js 14
+- **Language:** TypeScript
+- **Styling:** SCSS/Sass with CSS Modules
+- **Icons:** Ionicons
+- **Fonts:** Google Fonts (Manrope)
+- **Package Manager:** npm
+- **Linting:** ESLint + Prettier
+- **Development:** Hot reload with Next.js dev server
 
-<br />
+## 📁 Project Structure
 
-### Demo Screenshots
+```
+src/
+├── app/                    # Next.js 14 App Router
+│   ├── layout.tsx         # Root layout with metadata
+│   ├── page.tsx           # Home page
+│   ├── about/             # About page
+│   ├── services/          # Services page
+│   ├── projects/          # Projects page
+│   ├── blog/              # Blog page
+│   └── contact/           # Contact page
+├── components/            # Reusable React components
+│   ├── Header.tsx         # Navigation header
+│   ├── Footer.tsx         # Site footer
+│   ├── Layout.tsx         # Page layout wrapper
+│   └── sections/          # Page sections
+│       └── home/          # Home page sections
+├── hooks/                 # Custom React hooks
+│   ├── useScroll.ts       # Scroll position hook
+│   ├── useSlider.ts       # Image slider hook
+│   └── useAccordion.ts    # Accordion functionality
+├── styles/                # Global styles and utilities
+│   ├── globals.scss       # Global styles
+│   ├── _variables.scss    # SCSS variables
+│   └── _mixins.scss       # SCSS mixins
+├── types/                 # TypeScript type definitions
+│   ├── index.ts           # Main type definitions
+│   └── ion-icon.d.ts      # Ionicons type declarations
+└── utils/                 # Utility functions
+```
 
-![Adex Desktop Demo](./readme-images/desktop.png "Desktop Demo")
+## 🚀 Getting Started
 
 ### Prerequisites
 
-Before you begin, ensure you have met the following requirements:
+- Node.js 18.x or later
+- npm or yarn package manager
 
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+### Installation
 
-### Run Locally
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/trinhquocthinh/Agency.git
+   cd agency-website
+   ```
 
-```bash
-git clone <your-fork-url>
-cd adex
-npx --yes serve .
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint issues
+- `npm run type-check` - Run TypeScript type checking
+- `npm run format` - Format code with Prettier
+- `npm run clean` - Clean build directories
+
+## 🎨 Customization
+
+### Colors & Branding
+
+Update brand colors in `src/styles/_variables.scss`:
+
+```scss
+// Primary brand colors
+$violet-blue-crayola: hsla(234, 50%, 64%, 1);
+$charcoal: hsla(218, 22%, 26%, 1);
+$white: hsla(0, 0%, 100%, 1);
 ```
 
-Or, using Python:
+### Typography
 
-```bash
-git clone <your-fork-url>
-cd adex
-python -m http.server 8080
+Modify fonts in `src/app/layout.tsx` and `src/styles/_variables.scss`:
+
+```scss
+$ff-manrope: 'Manrope', sans-serif;
 ```
 
-Then open [http://localhost:8080](http://localhost:8080) in your browser (use the port shown in your terminal if different).
+### Content
 
-### Pages & Navigation
+Update website content by editing the respective page files in `src/app/`:
+- Home: `src/app/page.tsx`
+- About: `src/app/about/page.tsx`
+- Services: `src/app/services/page.tsx`
+- etc.
 
-The template now ships with a complete navigation experience. Every item and call-to-action opens a dedicated page while preserving the original visual language:
+## 📱 Responsive Design
 
-- `index.html` – Hero slider, services highlights, case studies, CTA
-- `about.html` – Studio story, principles, leadership spotlight
-- `services.html` – Detailed service catalogue, engagement models, capabilities
-- `projects.html` – Extended case study library and outcome metrics
-- `blog.html` – Editorial hub with newsletter opt-in
-- `contact.html` – Contact options, intake form, FAQ accordion (`#quote` anchors trial buttons)
-- `terms.html` & `privacy.html` – Legal pages linked from the footer
-- `project-*.html` – Individual case studies with deep dives for Ligula, Nullam, Ultricies, and Habit launches
-- `blog-*.html` – Long-form articles covering metrics, design systems, experimentation, and retention disciplines
+The website is fully responsive with breakpoints:
+- Mobile: 575px and below
+- Tablet: 576px - 991px
+- Desktop: 992px - 1199px
+- Large Desktop: 1200px and above
 
-### Development Tips
+## 🔧 Component Architecture
 
-- Reuse the shared `assets/css/style.css` and `assets/js/script.js` across every page for consistent animations and responsive behaviour.
-- Update navigation/footers in one page and mirror across the others to retain parity.
-- Run HTML checks before shipping:
+### Reusable Components
 
-  ```bash
-  npx --yes htmlhint index.html about.html services.html projects.html blog.html contact.html terms.html privacy.html
-  ```
+- **Header**: Navigation with mobile menu
+- **Footer**: Site footer with newsletter signup
+- **Layout**: Page wrapper with common elements
+- **Sections**: Modular page sections
 
-  This repository passes the above command with zero warnings.
+### Custom Hooks
 
-### Contact
+- **useScroll**: Track scroll position for sticky header
+- **useSlider**: Image carousel functionality
+- **useAccordion**: Expandable content sections
 
-If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
+## 🌐 SEO & Performance
 
-### License
+- **Metadata API**: Dynamic meta tags for each page
+- **Image Optimization**: Next.js Image component with lazy loading
+- **Font Optimization**: Google Fonts with display swap
+- **Core Web Vitals**: Optimized for performance metrics
 
-[MIT](https://choosealicense.com/licenses/mit/)
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. **Connect your repository** to Vercel
+2. **Configure build settings** (auto-detected for Next.js)
+3. **Deploy** with automatic CI/CD
+
+### Other Platforms
+
+The project supports deployment on:
+- Netlify
+- AWS Amplify
+- Google Cloud Platform
+- Self-hosted servers
+
+Build command: `npm run build`
+Output directory: `.next`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+**Adex Digital Studio**
+- Website: [https://adex-agency.com](https://adex-agency.com)
+- Email: info@email.com
+- Phone: 00 (123) 456 78 90
+
+## 🙏 Acknowledgments
+
+- Design inspiration from modern agency websites
+- Next.js team for the amazing framework
+- Ionicons for beautiful icons
+- Google Fonts for typography
+
+---
+
+Built with ❤️ by [Adex Digital Studio](https://github.com/trinhquocthinh)
