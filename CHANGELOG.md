@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 ### Fixed
+- GitHub Actions workflow now uses Yarn instead of npm to match project setup
+- Improved release notes extraction with better version format detection
 
 ### Security
 
