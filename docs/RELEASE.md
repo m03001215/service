@@ -26,6 +26,11 @@ The release script automatically:
    - Creates and pushes git tags
    - Pushes changes to remote repository
 
+5. **GitHub Actions automation**:
+   - Automatically triggers when a new tag is pushed
+   - Creates a GitHub release with changelog notes
+   - Runs quality checks and builds the project
+
 ## Usage
 
 ### Basic Release Commands
@@ -66,6 +71,8 @@ The release script will automatically:
 - Move these changes to a new version section
 - Add the current date
 - Reset the `[Unreleased]` section for future changes
+- Push the tag to trigger GitHub Actions
+- GitHub Actions will create the GitHub release automatically
 
 ### Release Types (Semantic Versioning)
 

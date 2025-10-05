@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- GitHub Actions workflow for automatic release creation
+- Auto-generated GitHub releases when tags are pushed
 
 ### Changed
 

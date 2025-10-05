@@ -1,0 +1,78 @@
+name: Auto Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*' # Match semantic version tags like v1.0.0
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run build and tests
+        run: |
+          npm run type-check
+          npm run lint:strict
+          npm run build
+
+      - name: Get version from tag
+        id: version
+        run: |
+          echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Generate release notes
+        id: notes
+        run: |
+          TAG="${{ steps.version.outputs.tag }}"
+          echo "Generating release notes for $TAG"
+          
+          # Simple approach: get the changelog section for this version
+          if grep -q "## \[${{ steps.version.outputs.tag }}\]" CHANGELOG.md; then
+            # Extract content between this version and the next version
+            sed -n "/## \[${{ steps.version.outputs.tag }}\]/,/## \[/p" CHANGELOG.md | sed '$d' | tail -n +2 > temp_notes.md
+          elif grep -q "## \[${{ steps.version.outputs.version }}\]" CHANGELOG.md; then
+            # Try without 'v' prefix
+            sed -n "/## \[${{ steps.version.outputs.version }}\]/,/## \[/p" CHANGELOG.md | sed '$d' | tail -n +2 > temp_notes.md
+          else
+            echo "## What's Changed" > temp_notes.md
+            echo "" >> temp_notes.md
+            echo "See [CHANGELOG.md](./CHANGELOG.md) for details." >> temp_notes.md
+          fi
+          
+          # Clean up the notes (remove empty sections)
+          grep -v "^### Added$\|^### Changed$\|^### Deprecated$\|^### Removed$\|^### Fixed$\|^### Security$" temp_notes.md > release_notes.md || echo "Minor updates and improvements." > release_notes.md
+          
+          echo "Release notes:"
+          cat release_notes.md
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: Release ${{ steps.version.outputs.tag }}
+          body_path: release_notes.md
+          draft: false
+          prerelease: false
+          generate_release_notes: true # This will also add auto-generated notes from commits
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
