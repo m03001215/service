@@ -48,11 +48,10 @@ echo "📝 Creating new $RELEASE_TYPE version..."
 NEW_VERSION=$(npm version $RELEASE_TYPE --no-git-tag-version)
 echo "🎉 New version: $NEW_VERSION"
 
-# Update changelog (if exists)
+# Update changelog automatically
 if [ -f "CHANGELOG.md" ]; then
-  echo "📝 Please update CHANGELOG.md with the new version changes"
-  echo "Press any key to continue after updating the changelog..."
-  read -n 1 -s
+  echo "📝 Automatically updating CHANGELOG.md..."
+  node scripts/update-changelog.js "$NEW_VERSION"
 fi
 
 # Commit version changes

@@ -8,6 +8,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Automated changelog updates during release process
+- Release documentation and workflow guide
+- Node.js script for changelog management
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [1.0.1] - 2025-10-05
+
+### Added
 - ESLint pre-commit hooks to ensure code quality
 - Automated release workflow with comprehensive checks
 - Enhanced release scripts with type checking and formatting validation

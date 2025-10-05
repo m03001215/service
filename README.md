@@ -90,14 +90,30 @@ src/
 
 ## 📝 Available Scripts
 
+### Development
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run start` - Start production server
+
+### Code Quality
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint issues
+- `npm run lint:strict` - Run ESLint with no warnings allowed
 - `npm run type-check` - Run TypeScript type checking
 - `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+
+### Release Management
+- `npm run release` - Create a patch release (1.0.0 → 1.0.1)
+- `npm run release:patch` - Create a patch release
+- `npm run release:minor` - Create a minor release (1.0.0 → 1.1.0)
+- `npm run release:major` - Create a major release (1.0.0 → 2.0.0)
+
+### Utilities
 - `npm run clean` - Clean build directories
+- `npm run analyze` - Analyze bundle size
+
+See [docs/RELEASE.md](docs/RELEASE.md) for detailed release workflow documentation.
 
 ## 🎨 Customization
 
