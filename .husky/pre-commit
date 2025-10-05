@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# Run ESLint with strict mode (no warnings allowed)
+echo "🔍 Running ESLint..."
+npm run lint:strict
+
+# Run TypeScript type checking
+echo "🔍 Running TypeScript checks..."
+npm run type-check
+
+# Run lint-staged to format and fix staged files
+echo "🎨 Running lint-staged..."
+npx lint-staged
