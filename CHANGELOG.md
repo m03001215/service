@@ -8,6 +8,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [v1.0.2] - 2025-10-05
+
+### Added
 - Automated changelog updates during release process
 - Release documentation and workflow guide
 - Node.js script for changelog management
