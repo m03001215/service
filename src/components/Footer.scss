@@ -54,6 +54,14 @@
   position: relative;
   margin-block-start: 25px;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .input-field {
@@ -62,10 +70,11 @@
   font-size: $fs-7;
   padding: 12px 16px;
   border: 1px solid $dark-cornflower-blue_a7;
-  border-radius: $radius-6;
+  border-top-left-radius: $radius-6;
+  border-bottom-left-radius: $radius-6;
   box-shadow: $shadow-3;
   outline: none;
-  flex: 1;
+  width: 100%;
 
   &::placeholder {
     color: inherit;
@@ -74,6 +83,19 @@
   &:focus {
     border-color: $violet-blue-crayola;
   }
+
+  &.error {
+    border-color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.1);
+  }
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 2px;
+  display: block;
 }
 
 .submit-btn {
@@ -83,9 +105,19 @@
   padding-inline: 24px;
   font-weight: $fw-700;
   transition: $transition-1;
+  border: none;
+  cursor: pointer;
+  max-height: 51.5px;
 
-  &:is(:hover, :focus-visible) {
+  &:is(:hover, :focus-visible):not(:disabled) {
     background-color: $blue-crayola;
+  }
+
+  &:disabled {
+    background-color: $light-gray;
+    color: $charcoal;
+    cursor: not-allowed;
+    opacity: 0.6;
   }
 }
 

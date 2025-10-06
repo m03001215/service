@@ -2,13 +2,32 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import { SocialLink, NewsletterFormData } from '@/types';
 import './Footer.scss';
 
+// Validation schema
+const newsletterSchema = yup.object().shape({
+  email: yup
+    .string()
+    .required('Email is required')
+    .email('Please enter a valid email address')
+    .trim(),
+});
+
 const Footer = () => {
-  const [newsletterData, setNewsletterData] = useState<NewsletterFormData>({
-    email: '',
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<NewsletterFormData>({
+    resolver: yupResolver(newsletterSchema),
+    defaultValues: {
+      email: '',
+    },
   });
 
   const socialLinks: SocialLink[] = [
@@ -23,15 +42,24 @@ const Footer = () => {
     { href: 'https://youtube.com', icon: 'logo-youtube', label: 'YouTube' },
   ];
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle newsletter subscription logic here
-    // Handle newsletter subscription
-    setNewsletterData({ email: '' });
-  };
+  const onSubmit = async (data: NewsletterFormData) => {
+    try {
+      // Handle newsletter subscription logic here
+      // TODO: Replace with actual API call
+      // Example: await subscribeToNewsletter(data.email);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewsletterData({ email: e.target.value });
+      // Simulate API call with the email data
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Reset form on successful submission
+      reset();
+
+      // You can add success notification here
+      alert(`Successfully subscribed ${data.email} to newsletter!`);
+    } catch (error) {
+      // You can add error notification here
+      alert('Failed to subscribe. Please try again.');
+    }
   };
 
   return (
@@ -141,19 +169,25 @@ const Footer = () => {
             you.
           </p>
 
-          <form onSubmit={handleNewsletterSubmit} className="input-wrapper">
-            <input
-              type="email"
-              name="email_address"
-              placeholder="Email Address"
-              required
-              className="input-field"
-              value={newsletterData.email}
-              onChange={handleInputChange}
-            />
+          <form onSubmit={handleSubmit(onSubmit)} className="input-wrapper">
+            <div className="input-group">
+              <input
+                type="email"
+                placeholder="Email Address"
+                className={`input-field ${errors.email ? 'error' : ''}`}
+                {...register('email')}
+              />
+              {errors.email && (
+                <span className="error-message">{errors.email.message}</span>
+              )}
+            </div>
 
-            <button type="submit" className="submit-btn">
-              Join
+            <button
+              type="submit"
+              className="submit-btn"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Joining...' : 'Join'}
             </button>
           </form>
         </div>
