@@ -1,0 +1,50 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.feature {
+  .container {
+    display: grid;
+    gap: 50px;
+
+    @include tablet-up {
+      grid-template-columns: 0.7fr 1fr;
+      align-items: center;
+    }
+  }
+
+  .section-text {
+    margin-block: 25px 30px;
+  }
+}
+
+.feature-banner {
+  @include tablet-up {
+    order: 1;
+  }
+}
+
+.feature-list {
+  display: grid;
+  gap: 15px;
+
+  @include xl-desktop-up {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .card-icon {
+    background-color: $lavender-web;
+    font-size: 1.4rem;
+    padding: 4px;
+    border-radius: $radius-circle;
+
+    ion-icon {
+      --ionicon-stroke-width: 40px;
+    }
+  }
+}
