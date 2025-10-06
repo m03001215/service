@@ -4,6 +4,7 @@ import HeroSection from '@/components/sections/home/HeroSection';
 import ServiceSection from '@/components/sections/home/ServiceSection';
 import AboutSection from '@/components/sections/home/AboutSection';
 import FeatureSection from '@/components/sections/home/FeatureSection';
+import StatSection from '@/components/sections/home/StatSection';
 
 export const metadata: Metadata = {
   title: 'Adex • Digital Product Studio',
@@ -25,6 +26,7 @@ export default function Home() {
         <ServiceSection />
         <AboutSection />
         <FeatureSection />
+        <StatSection />
       </article>
     </Layout>
   );
