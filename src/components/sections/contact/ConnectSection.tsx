@@ -1,10 +1,77 @@
 'use client';
 
 import Link from 'next/link';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { ProjectContactFormData } from '@/types';
 
-import './ContactConnectSection.scss';
+import './ConnectSection.scss';
 
-const ContactConnectSection = () => {
+// Validation schema
+const projectContactSchema = yup.object().shape({
+  name: yup
+    .string()
+    .required('Full name is required')
+    .min(2, 'Name must be at least 2 characters')
+    .trim(),
+  email: yup
+    .string()
+    .required('Email is required')
+    .email('Please enter a valid email address')
+    .trim(),
+  company: yup.string().optional().trim(),
+  budget: yup
+    .string()
+    .required('Please select a budget range')
+    .notOneOf([''], 'Please select a budget range'),
+  details: yup
+    .string()
+    .required('Project details are required')
+    .min(10, 'Please provide at least 10 characters of detail')
+    .trim(),
+  nda: yup.boolean().default(false),
+});
+
+const ConnectSection = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ProjectContactFormData>({
+    resolver: yupResolver(projectContactSchema) as any,
+    defaultValues: {
+      name: '',
+      email: '',
+      company: '',
+      budget: '',
+      details: '',
+      nda: false,
+    },
+  });
+
+  const onSubmit = async (data: ProjectContactFormData) => {
+    try {
+      // Handle form submission logic here
+      // TODO: Replace with actual API call
+      // Example: await submitProjectContact(data);
+
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      // Reset form on successful submission
+      reset();
+
+      // You can add success notification here
+      alert(
+        `Thank you ${data.name}! Your request has been submitted successfully. We will contact you at ${data.email} within one business day.`
+      );
+    } catch (error) {
+      // You can add error notification here
+      alert('Failed to submit request. Please try again.');
+    }
+  };
   return (
     <section
       className="section contact-section"
@@ -68,7 +135,7 @@ const ContactConnectSection = () => {
           className="contact-form"
           id="quote"
           aria-describedby="contact-title"
-          onSubmit={event => event.preventDefault()}
+          onSubmit={handleSubmit(onSubmit)}
         >
           <div className="form-header">
             <h3 className="h3">Start a project conversation</h3>
@@ -90,11 +157,13 @@ const ContactConnectSection = () => {
               <input
                 type="text"
                 id="contact-name"
-                name="name"
                 placeholder="Jane Doe"
-                required
-                className="input-field"
+                className={`input-field ${errors.name ? 'error' : ''}`}
+                {...register('name')}
               />
+              {errors.name && (
+                <span className="error-message">{errors.name.message}</span>
+              )}
             </div>
 
             <div className="form-field">
@@ -104,11 +173,13 @@ const ContactConnectSection = () => {
               <input
                 type="email"
                 id="contact-email"
-                name="email"
                 placeholder="you@email.com"
-                required
-                className="input-field"
+                className={`input-field ${errors.email ? 'error' : ''}`}
+                {...register('email')}
               />
+              {errors.email && (
+                <span className="error-message">{errors.email.message}</span>
+              )}
             </div>
 
             <div className="form-field">
@@ -118,10 +189,13 @@ const ContactConnectSection = () => {
               <input
                 type="text"
                 id="contact-company"
-                name="company"
                 placeholder="Your company"
-                className="input-field"
+                className={`input-field ${errors.company ? 'error' : ''}`}
+                {...register('company')}
               />
+              {errors.company && (
+                <span className="error-message">{errors.company.message}</span>
+              )}
             </div>
 
             <div className="form-field">
@@ -130,18 +204,18 @@ const ContactConnectSection = () => {
               </label>
               <select
                 id="contact-budget"
-                name="budget"
-                className="input-field"
-                defaultValue=""
+                className={`input-field ${errors.budget ? 'error' : ''}`}
+                {...register('budget')}
               >
-                <option value="" disabled>
-                  Choose an option
-                </option>
+                <option value="">Choose an option</option>
                 <option value="50-100">$50k – $100k</option>
                 <option value="100-250">$100k – $250k</option>
                 <option value="250-500">$250k – $500k</option>
                 <option value="500+">$500k+</option>
               </select>
+              {errors.budget && (
+                <span className="error-message">{errors.budget.message}</span>
+              )}
             </div>
           </div>
 
@@ -151,21 +225,27 @@ const ContactConnectSection = () => {
             </label>
             <textarea
               id="contact-details"
-              name="details"
               rows={4}
               placeholder="Share context, goals, and key milestones"
-              className="input-field"
-              required
+              className={`input-field ${errors.details ? 'error' : ''}`}
+              {...register('details')}
             ></textarea>
+            {errors.details && (
+              <span className="error-message">{errors.details.message}</span>
+            )}
           </div>
 
           <label className="checkbox" htmlFor="contact-nda">
-            <input type="checkbox" name="nda" value="yes" id="contact-nda" />
-            <span>I’d like to start with an NDA.</span>
+            <input type="checkbox" id="contact-nda" {...register('nda')} />
+            <span>I&apos;d like to start with an NDA.</span>
           </label>
 
-          <button type="submit" className="btn btn-primary">
-            Submit request
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit request'}
           </button>
         </form>
       </div>
@@ -173,4 +253,4 @@ const ContactConnectSection = () => {
   );
 };
 
-export default ContactConnectSection;
+export default ConnectSection;

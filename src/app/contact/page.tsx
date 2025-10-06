@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import Layout from '@/components/Layout';
-import ContactHeroSection from '@/components/sections/contact/ContactHeroSection';
-import ContactConnectSection from '@/components/sections/contact/ContactConnectSection';
-import ContactFAQSection from '@/components/sections/contact/ContactFAQSection';
+import ConnectSection from '@/components/sections/contact/ConnectSection';
+import FAQSection from '@/components/sections/contact/FAQSection';
+import HeroSection from '@/components/sections/contact/HeroSection';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -14,9 +14,9 @@ export default function Contact() {
   return (
     <Layout>
       <article className="contact-page">
-        <ContactHeroSection />
-        <ContactConnectSection />
-        <ContactFAQSection />
+        <HeroSection />
+        <ConnectSection />
+        <FAQSection />
       </article>
     </Layout>
   );

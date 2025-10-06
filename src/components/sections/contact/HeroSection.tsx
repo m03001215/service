@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import './ContactHeroSection.scss';
+import './HeroSection.scss';
 
-const ContactHeroSection = () => {
+const HeroSection = () => {
   return (
     <section
       className="page-hero contact-hero has-bg-image"
@@ -37,4 +37,4 @@ const ContactHeroSection = () => {
   );
 };
 
-export default ContactHeroSection;
+export default HeroSection;

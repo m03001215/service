@@ -81,6 +81,15 @@ export interface ContactFormData {
   message: string;
 }
 
+export interface ProjectContactFormData {
+  name: string;
+  email: string;
+  company?: string;
+  budget: string;
+  details: string;
+  nda: boolean;
+}
+
 export interface NewsletterFormData {
   email: string;
 }

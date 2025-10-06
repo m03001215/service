@@ -3,7 +3,7 @@
 import { useMemo } from 'react';
 import { useAccordion } from '@/hooks/useAccordion';
 
-import './ContactFAQSection.scss';
+import './FAQSection.scss';
 
 const faqItems = [
   {
@@ -26,7 +26,7 @@ const faqItems = [
   },
 ];
 
-const ContactFAQSection = () => {
+const FAQSection = () => {
   const { toggleAccordion, isExpanded } = useAccordion(faqItems[0].id);
 
   const items = useMemo(() => faqItems, []);
@@ -94,4 +94,4 @@ const ContactFAQSection = () => {
   );
 };
 
-export default ContactFAQSection;
+export default FAQSection;
