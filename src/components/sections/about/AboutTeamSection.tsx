@@ -1,3 +1,9 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+import { fadeIn, fadeInScale, staggerContainer } from '@/utils/motion';
+
 import './AboutTeamSection.scss';
 
 const teamMembers = [
@@ -23,40 +29,79 @@ const teamMembers = [
 
 const AboutTeamSection = () => {
   return (
-    <section className="section about-team" aria-labelledby="team-title">
-      <div className="container">
-        <div className="team-header">
-          <p className="section-subtitle" id="team-title">
+    <motion.section
+      className="section about-team"
+      aria-labelledby="team-title"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <motion.div className="container" variants={staggerContainer(0.22, 0.1)}>
+        <motion.div className="team-header" variants={fadeIn('up', 22, 0.45)}>
+          <motion.p
+            className="section-subtitle"
+            id="team-title"
+            variants={fadeIn('up', 18, 0.45)}
+          >
             Leadership
-          </p>
-          <div className="team-heading">
-            <h2 className="h2 section-title">
+          </motion.p>
+          <motion.div className="team-heading" variants={fadeIn('up', 24, 0.5)}>
+            <motion.h2
+              className="h2 section-title"
+              variants={fadeIn('up', 24, 0.55)}
+            >
               Meet the people guiding our craft.
-            </h2>
-            <p className="section-text">
+            </motion.h2>
+            <motion.p className="section-text" variants={fadeIn('up', 22, 0.6)}>
               Our leadership team pairs market intuition with deep delivery
               experience. They coach every engagement, ensuring strategy and
               execution stay tightly linked.
-            </p>
-          </div>
-        </div>
+            </motion.p>
+          </motion.div>
+        </motion.div>
 
-        <ul className="grid-list team-grid">
+        <motion.ul
+          className="grid-list team-grid"
+          variants={staggerContainer(0.16, 0.3)}
+        >
           {teamMembers.map(member => (
-            <li key={member.name}>
-              <article className="team-card">
-                <div className="team-avatar" aria-hidden="true">
+            <motion.li key={member.name} variants={fadeIn('up', 28, 0.4)}>
+              <motion.article
+                className="team-card"
+                variants={fadeInScale(0.55)}
+                whileHover={{ y: -8, transition: { duration: 0.25 } }}
+              >
+                <motion.div
+                  className="team-avatar"
+                  aria-hidden="true"
+                  variants={fadeIn('up', 12, 0.35)}
+                >
                   {member.initials}
-                </div>
-                <h3 className="h4 card-title">{member.name}</h3>
-                <p className="card-text">{member.role}</p>
-                <p className="section-text">{member.bio}</p>
-              </article>
-            </li>
+                </motion.div>
+                <motion.h3
+                  className="h4 card-title"
+                  variants={fadeIn('up', 18, 0.4)}
+                >
+                  {member.name}
+                </motion.h3>
+                <motion.p
+                  className="card-text"
+                  variants={fadeIn('up', 16, 0.45)}
+                >
+                  {member.role}
+                </motion.p>
+                <motion.p
+                  className="section-text"
+                  variants={fadeIn('up', 16, 0.5)}
+                >
+                  {member.bio}
+                </motion.p>
+              </motion.article>
+            </motion.li>
           ))}
-        </ul>
-      </div>
-    </section>
+        </motion.ul>
+      </motion.div>
+    </motion.section>
   );
 };
 

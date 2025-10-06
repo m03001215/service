@@ -1,25 +1,42 @@
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+import { fadeIn, staggerContainer } from '@/utils/motion';
 
 import './AboutHeroSection.scss';
 
 const AboutHeroSection = () => {
   return (
-    <section
+    <motion.section
       className="page-hero about-hero has-bg-image"
       aria-label="About Adex"
       style={{ backgroundImage: "url('/assets/images/hero-bg.jpg')" }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.6 }}
+      variants={staggerContainer(0.18, 0.05)}
     >
       <div className="overlay" aria-hidden="true" />
 
-      <div className="container">
-        <p className="section-subtitle">About Adex</p>
-        <h1 className="h1 page-title">Where strategy meets creativity.</h1>
-        <p className="section-text">
+      <motion.div className="container" variants={staggerContainer(0.18, 0.1)}>
+        <motion.p variants={fadeIn('up', 24, 0.5)} className="section-subtitle">
+          About Adex
+        </motion.p>
+        <motion.h1 variants={fadeIn('up', 24, 0.6)} className="h1 page-title">
+          Where strategy meets creativity.
+        </motion.h1>
+        <motion.p variants={fadeIn('up', 28, 0.65)} className="section-text">
           We’re a collective of strategists, designers, and engineers obsessed
           with transforming ambitious ideas into lovable digital products.
-        </p>
+        </motion.p>
 
-        <nav className="breadcrumb" aria-label="Breadcrumb">
+        <motion.nav
+          className="breadcrumb"
+          aria-label="Breadcrumb"
+          variants={fadeIn('up', 20, 0.7)}
+        >
           <Link href="/" className="breadcrumb-link">
             Home
           </Link>
@@ -29,9 +46,9 @@ const AboutHeroSection = () => {
           <span className="breadcrumb-current" aria-current="page">
             About
           </span>
-        </nav>
-      </div>
-    </section>
+        </motion.nav>
+      </motion.div>
+    </motion.section>
   );
 };
 

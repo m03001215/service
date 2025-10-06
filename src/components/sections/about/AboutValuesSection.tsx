@@ -1,3 +1,9 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+import { fadeIn, fadeInScale, staggerContainer } from '@/utils/motion';
+
 import './AboutValuesSection.scss';
 
 const valueCards = [
@@ -23,30 +29,65 @@ const valueCards = [
 
 const AboutValuesSection = () => {
   return (
-    <section className="section about-values" aria-labelledby="values-title">
-      <div className="container">
-        <div className="values-header">
-          <p className="section-subtitle" id="values-title">
+    <motion.section
+      className="section about-values"
+      aria-labelledby="values-title"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <motion.div className="container" variants={staggerContainer(0.22, 0.12)}>
+        <motion.div className="values-header" variants={fadeIn('up', 24, 0.5)}>
+          <motion.p
+            className="section-subtitle"
+            id="values-title"
+            variants={fadeIn('up', 16, 0.5)}
+          >
             What drives us
-          </p>
-          <h2 className="h2 section-title">
+          </motion.p>
+          <motion.h2
+            className="h2 section-title"
+            variants={fadeIn('up', 22, 0.55)}
+          >
             Principles that keep our teams inspired and aligned.
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
-        <div className="content-grid values-grid">
+        <motion.div
+          className="content-grid values-grid"
+          variants={staggerContainer(0.18, 0.2)}
+        >
           {valueCards.map(card => (
-            <article key={card.title} className="content-card value-card">
-              <div className="icon-badge" aria-hidden="true">
+            <motion.article
+              key={card.title}
+              className="content-card value-card"
+              variants={fadeInScale(0.55)}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+            >
+              <motion.div
+                className="icon-badge"
+                aria-hidden="true"
+                variants={fadeIn('up', 10, 0.2)}
+              >
                 <ion-icon name={card.icon}></ion-icon>
-              </div>
-              <h3 className="h4 card-title">{card.title}</h3>
-              <p className="section-text">{card.description}</p>
-            </article>
+              </motion.div>
+              <motion.h3
+                className="h4 card-title"
+                variants={fadeIn('up', 16, 0.35)}
+              >
+                {card.title}
+              </motion.h3>
+              <motion.p
+                className="section-text"
+                variants={fadeIn('up', 16, 0.38)}
+              >
+                {card.description}
+              </motion.p>
+            </motion.article>
           ))}
-        </div>
-      </div>
-    </section>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 };
 

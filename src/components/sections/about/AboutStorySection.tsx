@@ -2,8 +2,10 @@
 
 import Image from 'next/image';
 import { useMemo } from 'react';
+import { motion } from 'framer-motion';
 
 import { useAccordion } from '@/hooks/useAccordion';
+import { fadeIn, fadeInScale, staggerContainer } from '@/utils/motion';
 
 import './AboutStorySection.scss';
 
@@ -35,13 +37,19 @@ const AboutStorySection = () => {
   const items = useMemo(() => storyAccordionItems, []);
 
   return (
-    <section
+    <motion.section
       className="section about-story"
       id="story"
       aria-labelledby="story-title"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.35 }}
     >
-      <div className="container">
-        <figure className="about-banner">
+      <motion.div className="container" variants={staggerContainer(0.24, 0.12)}>
+        <motion.figure
+          className="about-banner"
+          variants={fadeIn('right', 40, 0.6)}
+        >
           <Image
             src="/assets/images/about-banner.png"
             width={800}
@@ -50,34 +58,58 @@ const AboutStorySection = () => {
             className="w-100"
             priority
           />
-        </figure>
+        </motion.figure>
 
-        <div className="about-content">
-          <p className="section-subtitle" id="story-title">
+        <motion.div
+          className="about-content"
+          variants={staggerContainer(0.18, 0.18)}
+        >
+          <motion.p
+            className="section-subtitle"
+            id="story-title"
+            variants={fadeIn('up', 16, 0.4)}
+          >
             Our Story
-          </p>
-          <div className="section-heading">
-            <h2 className="h2 section-title">
+          </motion.p>
+          <motion.div
+            className="section-heading"
+            variants={fadeIn('up', 22, 0.5)}
+          >
+            <motion.h2
+              className="h2 section-title"
+              variants={fadeIn('up', 26, 0.55)}
+            >
               From a boutique studio to a global innovation partner.
-            </h2>
-            <p className="section-text">
+            </motion.h2>
+            <motion.p className="section-text" variants={fadeIn('up', 26, 0.6)}>
               What began as a small group of product enthusiasts has evolved
               into a multidisciplinary agency trusted by teams across four
               continents. Along the way we’ve built a reputation for translating
               complex business problems into experiences that feel effortless
               for the people who use them.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <ul className="accordion-list">
+          <motion.ul
+            className="accordion-list"
+            variants={staggerContainer(0.14, 0.2)}
+          >
             {items.map(item => {
               const expanded = isExpanded(item.id);
 
               return (
-                <li key={item.id} className="about-item">
-                  <article
+                <motion.li
+                  key={item.id}
+                  className="about-item"
+                  variants={fadeInScale(0.5)}
+                >
+                  <motion.article
                     className={`accordion-card ${expanded ? 'expanded' : ''}`}
                     data-accordion
+                    layout
+                    transition={{
+                      layout: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
+                    }}
                   >
                     <h3 className="card-title">
                       <button
@@ -105,14 +137,14 @@ const AboutStorySection = () => {
                     >
                       {item.content}
                     </p>
-                  </article>
-                </li>
+                  </motion.article>
+                </motion.li>
               );
             })}
-          </ul>
-        </div>
-      </div>
-    </section>
+          </motion.ul>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 };
 
