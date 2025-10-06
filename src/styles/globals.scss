@@ -231,7 +231,7 @@ body {
   }
 
   .grid-list {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -250,9 +250,5 @@ body {
 @include xl-desktop-up {
   .container {
     max-width: 1320px;
-  }
-
-  .grid-list {
-    gap: 40px;
   }
 }

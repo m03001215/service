@@ -7,39 +7,35 @@
   color: $light-gray;
 
   .container {
-    @include grid-list;
-
-    @include desktop-up {
+    @include laptop-up {
       grid-template-columns: repeat(4, 1fr);
     }
   }
 }
 
-.footerBrand {
-  .footerText {
+.footer-brand {
+  .footer-text {
     margin-block: 20px;
   }
 
-  .socialList {
+  .social-list {
     color: $white;
   }
 }
 
-.footerList {
-  margin-block-start: 24px;
-
+.footer-list {
   .h4 {
     color: $white;
     margin-block-end: 16px;
   }
 }
 
-.footerText {
+.footer-text {
   color: $light-gray;
   line-height: 1.6;
 }
 
-.footerLink {
+.footer-link {
   padding-block: 4px;
   transition: $transition-1;
   color: $light-gray;
@@ -54,13 +50,13 @@
   }
 }
 
-.inputWrapper {
+.input-wrapper {
   position: relative;
   margin-block-start: 25px;
   display: flex;
 }
 
-.inputField {
+.input-field {
   background-color: $white_a3;
   color: $light-gray;
   font-size: $fs-7;
@@ -80,7 +76,7 @@
   }
 }
 
-.submitBtn {
+.submit-btn {
   border-radius: 0 $radius-6 $radius-6 0;
   background-color: $violet-blue-crayola;
   color: $white;
@@ -94,17 +90,22 @@
 }
 
 // Footer list title styles
-.footerListTitle {
+.footer-list-title {
   color: $white;
   margin-block-end: 16px;
 }
 
 // Responsive styles
 @include desktop-up {
-  .footerBrand {
-    .footerText {
+  .footer-brand {
+    .footer-text {
       padding-inline-end: 100px;
       margin-block-end: 16px;
     }
+  }
+
+  address.footer-text {
+    padding-inline-end: 100px;
+    margin-block-end: 16px;
   }
 }
