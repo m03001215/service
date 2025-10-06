@@ -1,6 +1,15 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 $white-a70;
+  }
+  75% {
+    box-shadow: 0 0 0 20px transparent;
+  }
+}
+
 .hero {
   padding-block-start: calc(#{$section-padding} + 70px);
   text-align: center;
@@ -11,19 +20,19 @@
   }
 }
 
-.heroContent {
+.hero-content {
   .h1 {
     color: $white;
   }
 }
 
-.heroText {
+.hero-text {
   font-size: $fs-5;
   color: $white;
   margin-block: 24px 36px;
 }
 
-.btnWrapper {
+.btn-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -31,13 +40,13 @@
   gap: 12px;
 }
 
-.heroSlider,
-.heroCard {
+.hero-slider,
+.hero-card {
   position: relative;
 }
 
-.heroCard {
-  .playBtn {
+.hero-card {
+  .play-btn {
     @include absolute-center;
     @include button-reset;
     background-color: $white;
@@ -54,21 +63,12 @@
   }
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 $white-a70;
-  }
-  75% {
-    box-shadow: 0 0 0 20px transparent;
-  }
-}
-
-.sliderInner {
+.slider-inner {
   border-radius: $radius-10;
   overflow: hidden;
 }
 
-.sliderContainer {
+.slider-container {
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -76,7 +76,7 @@
   transition: $transition-2;
 }
 
-.sliderItem {
+.slider-item {
   min-width: 100%;
   width: 100%;
   border-radius: $radius-10;
@@ -84,7 +84,7 @@
   flex-shrink: 0;
 }
 
-.sliderBtn {
+.slider-btn {
   @include button-reset;
   position: absolute;
   top: 50%;
@@ -122,16 +122,16 @@
     }
   }
 
-  .heroContent {
+  .hero-content {
     max-width: unset;
     margin-inline: 0;
   }
 
-  .btnWrapper {
+  .btn-wrapper {
     justify-content: flex-start;
   }
 
-  .heroText {
+  .hero-text {
     padding-inline-end: 100px;
   }
 }

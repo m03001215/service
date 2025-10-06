@@ -1,21 +1,123 @@
 import React from 'react';
-import styles from './HeroSection.module.scss';
+import Image from 'next/image';
+
+import './HeroSection.scss';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className={styles.hero}>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>
-            Partner with Adex to design standout digital products
+    <section
+      className="section hero has-bg-image"
+      aria-label="home"
+      style={{ backgroundImage: "url('/assets/images/hero-bg.jpg')" }}
+    >
+      <div className="container">
+        <div className="hero-content">
+          <h1 className="h1 hero-title">
+            Crafting project specific solutions with expertise.
           </h1>
-          <p className={styles.subtitle}>
-            Launch faster, and grow sustainably with our expert team.
+
+          <p className="hero-text">
+            We&apos;re a creative company that focuses on establishing long-term
+            relationships with customers.
           </p>
-          <div className={styles.actions}>
-            <button className={styles.primaryBtn}>Get Started</button>
-            <button className={styles.secondaryBtn}>Learn More</button>
+
+          <div className="btn-wrapper">
+            <a href="services.html" className="btn btn-primary">
+              Explore Now
+            </a>
+
+            <a href="contact.html" className="btn btn-outline">
+              Contact Us
+            </a>
           </div>
+        </div>
+
+        <div className="hero-slider" data-slider>
+          <div className="slider-inner">
+            <ul className="slider-container" data-slider-container>
+              <li className="slider-item">
+                <figure
+                  className="img-holder"
+                  style={
+                    {
+                      '--width': '575',
+                      '--height': '550',
+                    } as React.CSSProperties
+                  }
+                >
+                  <Image
+                    src="/assets/images/hero-slide-1.jpg"
+                    width={575}
+                    height={550}
+                    alt=""
+                    className="img-cover"
+                  />
+                </figure>
+              </li>
+
+              <li className="slider-item">
+                <div className="hero-card">
+                  <figure
+                    className="img-holder"
+                    style={
+                      {
+                        '--width': '575',
+                        '--height': '550',
+                      } as React.CSSProperties
+                    }
+                  >
+                    <Image
+                      src="/assets/images/hero-slide-2.jpg"
+                      width={575}
+                      height={550}
+                      alt="hero banner"
+                      className="img-cover"
+                    />
+                  </figure>
+
+                  <button className="play-btn" aria-label="play adex intro">
+                    <ion-icon name="play" aria-hidden={true}></ion-icon>
+                  </button>
+                </div>
+              </li>
+
+              <li className="slider-item">
+                <figure
+                  className="img-holder"
+                  style={
+                    {
+                      '--width': '575',
+                      '--height': '550',
+                    } as React.CSSProperties
+                  }
+                >
+                  <Image
+                    src="/assets/images/hero-slide-3.jpg"
+                    width={575}
+                    height={550}
+                    alt=""
+                    className="img-cover"
+                  />
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+          <button
+            className="slider-btn prev"
+            aria-label="slide to previous"
+            data-slider-prev
+          >
+            <ion-icon name="arrow-back"></ion-icon>
+          </button>
+
+          <button
+            className="slider-btn next"
+            aria-label="slide to next"
+            data-slider-next
+          >
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
         </div>
       </div>
     </section>

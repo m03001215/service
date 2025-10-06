@@ -57,13 +57,37 @@
       display: block;
     }
 
-    .logo-light,
-    .nav-open-btn {
+    .logo-light {
       display: none;
     }
 
     .nav-open-btn {
       color: $charcoal;
+    }
+
+    @include tablet-up {
+      .btn {
+        background-color: $violet-blue-crayola;
+        border-color: $violet-blue-crayola;
+        color: $white;
+      }
+
+      .navbar-link {
+        color: $charcoal;
+
+        &.active {
+          color: $violet-blue-crayola;
+
+          &::after {
+            background-color: $violet-blue-crayola;
+          }
+        }
+
+        &:is(:hover, :focus-visible) {
+          opacity: 1;
+          color: $violet-blue-crayola;
+        }
+      }
     }
   }
 }
@@ -152,9 +176,10 @@
 .navbar-link {
   font-weight: $fw-700;
   padding-block: 6px;
+  padding-block-end: 0;
 
   &.active {
-    color: $white;
+    color: $violet-blue-crayola;
     position: relative;
 
     &::after {
@@ -164,7 +189,7 @@
       bottom: -6px;
       width: 18px;
       height: 2px;
-      background-color: $white;
+      background-color: $violet-blue-crayola;
       border-radius: $radius-pill;
     }
   }
