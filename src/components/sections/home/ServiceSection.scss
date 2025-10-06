@@ -4,18 +4,22 @@
 .service {
   text-align: center;
 
-  .sectionTitle {
+  .section-title {
     margin-block-end: 50px;
+
+    @include tablet-up {
+      max-width: 30ch;
+      margin-inline: auto;
+    }
   }
 }
 
-.serviceCard {
+.service-card {
   padding: 40px;
   box-shadow: $shadow-2;
   border-radius: $radius-6;
-  @include card-transition;
 
-  .cardIcon {
+  .card-icon {
     width: 60px;
     height: 60px;
     background-color: $violet-blue-crayola;
@@ -34,31 +38,31 @@
     margin-block: 16px 10px;
   }
 
-  .cardText {
+  .card-text {
     color: $black-coral;
     line-height: 1.6;
   }
-}
 
-.btnText {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  margin-block-start: 10px;
-  color: $violet-blue-crayola;
-  font-weight: $fw-700;
-  transition: $transition-1;
+  .btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-block-start: 10px;
+    color: $violet-blue-crayola;
+    font-weight: $fw-700;
+    transition: $transition-1;
 
-  &:is(:hover, :focus-visible) {
-    opacity: 0.9;
+    &:is(:hover, :focus-visible) {
+      opacity: 0.9;
+    }
   }
 }
 
 // Responsive styles
-@include xl-desktop-up {
+@include desktop-up {
   .service {
-    .gridList {
+    .grid-list {
       grid-template-columns: repeat(4, 1fr);
     }
   }

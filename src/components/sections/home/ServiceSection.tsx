@@ -1,46 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { ServiceCard } from '@/types';
-import styles from './ServiceSection.module.scss';
+
+import './ServiceSection.scss';
 
 const ServiceSection = () => {
-  const services: ServiceCard[] = [
-    {
-      icon: 'call-outline',
-      title: '24/7 Support',
-      description:
-        'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
-      href: '/services#support',
-    },
-    {
-      icon: 'shield-checkmark-outline',
-      title: 'Secure Payments',
-      description:
-        'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
-      href: '/services#payments',
-    },
-    {
-      icon: 'cloud-download-outline',
-      title: 'Daily Updates',
-      description:
-        'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
-      href: '/services#updates',
-    },
-    {
-      icon: 'pie-chart-outline',
-      title: 'Market Research',
-      description:
-        'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.',
-      href: '/services#research',
-    },
-  ];
-
   return (
-    <section
-      className={`section ${styles.service}`}
-      aria-labelledby="service-label"
-    >
+    <section className="section service" aria-labelledby="service-label">
       <div className="container">
         <p className="section-subtitle" id="service-label">
           What We Do?
@@ -51,27 +17,89 @@ const ServiceSection = () => {
         </h2>
 
         <ul className="grid-list">
-          {services.map((service, index) => (
-            <li key={index}>
-              <div className={styles.serviceCard}>
-                <div className={styles.cardIcon}>
-                  <ion-icon name={service.icon} aria-hidden={true}></ion-icon>
-                </div>
-
-                <h3 className="h4 card-title">{service.title}</h3>
-
-                <p className="card-text">{service.description}</p>
-
-                <Link href={service.href} className={styles.btnText}>
-                  <span className="span">Learn More</span>
-                  <ion-icon
-                    name="arrow-forward-outline"
-                    aria-hidden={true}
-                  ></ion-icon>
-                </Link>
+          <li>
+            <div className="service-card">
+              <div className="card-icon">
+                <ion-icon name="call-outline" aria-hidden={true} />
               </div>
-            </li>
-          ))}
+
+              <h3 className="h4 card-title">24/7 Support</h3>
+
+              <p className="card-text">
+                Nulla vitae elit libero, a pharetra augue. Donec id elit non mi
+                porta gravida at eget metus cras justo.
+              </p>
+
+              <Link href="/services#support" className="btn-text">
+                <span className="span">Learn More</span>
+
+                <ion-icon name="arrow-forward-outline" aria-hidden={true} />
+              </Link>
+            </div>
+          </li>
+
+          <li>
+            <div className="service-card">
+              <div className="card-icon">
+                <ion-icon name="shield-checkmark-outline" aria-hidden={true} />
+              </div>
+
+              <h3 className="h4 card-title">Secure Payments</h3>
+
+              <p className="card-text">
+                Nulla vitae elit libero, a pharetra augue. Donec id elit non mi
+                porta gravida at eget metus cras justo.
+              </p>
+
+              <Link href="/services#payments" className="btn-text">
+                <span className="span">Learn More</span>
+
+                <ion-icon name="arrow-forward-outline" aria-hidden={true} />
+              </Link>
+            </div>
+          </li>
+
+          <li>
+            <div className="service-card">
+              <div className="card-icon">
+                <ion-icon name="cloud-download-outline" aria-hidden={true} />
+              </div>
+
+              <h3 className="h4 card-title">Daily Updates</h3>
+
+              <p className="card-text">
+                Nulla vitae elit libero, a pharetra augue. Donec id elit non mi
+                porta gravida at eget metus cras justo.
+              </p>
+
+              <Link href="/services#updates" className="btn-text">
+                <span className="span">Learn More</span>
+
+                <ion-icon name="arrow-forward-outline" aria-hidden={true} />
+              </Link>
+            </div>
+          </li>
+
+          <li>
+            <div className="service-card">
+              <div className="card-icon">
+                <ion-icon name="pie-chart-outline" aria-hidden={true} />
+              </div>
+
+              <h3 className="h4 card-title">Market Research</h3>
+
+              <p className="card-text">
+                Nulla vitae elit libero, a pharetra augue. Donec id elit non mi
+                porta gravida at eget metus cras justo.
+              </p>
+
+              <Link href="/services#research" className="btn-text">
+                <span className="span">Learn More</span>
+
+                <ion-icon name="arrow-forward-outline" aria-hidden={true} />
+              </Link>
+            </div>
+          </li>
         </ul>
       </div>
     </section>

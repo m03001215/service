@@ -1,9 +1,30 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
 import './HeroSection.scss';
 
 const HeroSection: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev: number) => (prev >= 2 ? 0 : prev + 1));
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev: number) => (prev <= 0 ? 2 : prev - 1));
+  }, []);
+
+  // Auto play functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [nextSlide]);
+
   return (
     <section
       className="section hero has-bg-image"
@@ -22,11 +43,11 @@ const HeroSection: React.FC = () => {
           </p>
 
           <div className="btn-wrapper">
-            <a href="services.html" className="btn btn-primary">
+            <a href="services" className="btn btn-primary">
               Explore Now
             </a>
 
-            <a href="contact.html" className="btn btn-outline">
+            <a href="contact" className="btn btn-outline">
               Contact Us
             </a>
           </div>
@@ -34,7 +55,13 @@ const HeroSection: React.FC = () => {
 
         <div className="hero-slider" data-slider>
           <div className="slider-inner">
-            <ul className="slider-container" data-slider-container>
+            <ul
+              className="slider-container"
+              style={{
+                transform: `translateX(-${currentSlide * 100}%)`,
+                transition: 'transform 0.5s ease-in-out',
+              }}
+            >
               <li className="slider-item">
                 <figure
                   className="img-holder"
@@ -106,7 +133,7 @@ const HeroSection: React.FC = () => {
           <button
             className="slider-btn prev"
             aria-label="slide to previous"
-            data-slider-prev
+            onClick={prevSlide}
           >
             <ion-icon name="arrow-back"></ion-icon>
           </button>
@@ -114,7 +141,7 @@ const HeroSection: React.FC = () => {
           <button
             className="slider-btn next"
             aria-label="slide to next"
-            data-slider-next
+            onClick={nextSlide}
           >
             <ion-icon name="arrow-forward"></ion-icon>
           </button>
