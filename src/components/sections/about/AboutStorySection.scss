@@ -1,0 +1,122 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.about-story {
+  background-color: $white;
+
+  .container {
+    display: grid;
+    gap: 40px;
+
+    @include tablet-up {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: center;
+      gap: 56px;
+    }
+  }
+
+  .about-banner {
+    position: relative;
+    border-radius: $radius-10;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: auto 20px 20px 20px;
+      border-radius: inherit;
+      background: linear-gradient(
+        135deg,
+        rgba($violet-blue-crayola, 0.2),
+        transparent 60%
+      );
+      pointer-events: none;
+    }
+  }
+
+  .about-content {
+    display: grid;
+    gap: 28px;
+  }
+
+  .section-heading {
+    display: grid;
+    gap: 16px;
+  }
+
+  .accordion-list {
+    display: grid;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .accordion-card {
+    border-radius: $radius-8;
+    background-color: $cultured;
+    padding: 24px 28px;
+    box-shadow: $shadow-2;
+    transition: $transition-1;
+
+    &:is(:hover, :focus-within) {
+      box-shadow: 0 16px 32px rgba($raisin-black, 0.06);
+      transform: translateY(-2px);
+    }
+
+    &.expanded {
+      background-color: $white;
+
+      .accordion-content {
+        max-height: max-content;
+        margin-block-start: 12px;
+        opacity: 1;
+      }
+
+      .accordion-btn ion-icon {
+        transform: rotate(0.5turn);
+      }
+    }
+
+    .accordion-btn {
+      @include button-reset;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      text-align: left;
+
+      ion-icon {
+        font-size: 2.2rem;
+        color: $blue-crayola;
+        transition: $transition-1;
+      }
+
+      .span {
+        flex: 1;
+        transition: $transition-1;
+      }
+
+      &:is(:hover, :focus-visible) .span {
+        color: $violet-blue-crayola;
+      }
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      color: $black-coral;
+      transition: $transition-2;
+    }
+  }
+
+  @include xl-desktop-up {
+    .container {
+      align-items: stretch;
+    }
+
+    .about-banner::after {
+      inset: auto 30px 30px 30px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.about-cta {
+  background: linear-gradient(135deg, $charcoal 0%, $raisin-black 60%);
+  color: $white;
+  padding-block: 80px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: flex-start;
+  }
+
+  .cta-content {
+    display: grid;
+    gap: 16px;
+    max-width: 620px;
+
+    .section-title {
+      color: $white;
+    }
+
+    .section-text {
+      color: rgba($white, 0.75);
+      max-width: 520px;
+    }
+  }
+
+  .btn {
+    background-color: $white;
+    color: $charcoal;
+    border-color: $white;
+
+    &:is(:hover, :focus-visible) {
+      background-color: transparent;
+      color: $white;
+    }
+  }
+
+  @include tablet-up {
+    padding-block: 96px;
+
+    .container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cta-content {
+      max-width: 620px;
+    }
+  }
+}

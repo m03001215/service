@@ -1,0 +1,96 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.about-hero {
+  position: relative;
+  padding-block: calc(#{$section-padding} + 70px) 90px;
+  text-align: center;
+  color: $white;
+  overflow: hidden;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 20% 20%,
+      rgba($white, 0.15),
+      transparent 65%
+    );
+    mix-blend-mode: screen;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin-inline: auto;
+    display: grid;
+    gap: 24px;
+  }
+
+  .page-title,
+  .section-text,
+  .section-subtitle {
+    color: $white;
+  }
+
+  .section-text {
+    color: rgba($white, 0.85);
+  }
+
+  .breadcrumb {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: $fs-8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba($white, 0.7);
+    padding: 10px 20px;
+    border-radius: $radius-pill;
+    background-color: rgba($white, 0.08);
+    backdrop-filter: blur(6px);
+
+    .breadcrumb-link {
+      font-weight: $fw-700;
+      transition: $transition-1;
+
+      &:is(:hover, :focus-visible) {
+        color: $white;
+      }
+    }
+
+    .breadcrumb-current {
+      font-weight: $fw-700;
+      color: $white;
+    }
+  }
+
+  @include tablet-up {
+    text-align: left;
+
+    .container {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .breadcrumb {
+      margin-inline: auto;
+      width: fit-content;
+    }
+  }
+
+  @include desktop-up {
+    padding-block: calc(#{$section-padding} + 90px) 120px;
+
+    .container {
+      max-width: 840px;
+    }
+
+    .section-text {
+      font-size: $fs-5;
+    }
+  }
+}
