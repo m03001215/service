@@ -1,0 +1,101 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.contact-faq {
+  background-color: $white;
+
+  .faq-header {
+    display: grid;
+    gap: 16px;
+    max-width: 640px;
+    margin-block-end: 40px;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 20px;
+    padding-inline-start: 0;
+  }
+
+  .faq-item {
+    list-style: none;
+  }
+
+  .accordion-card {
+    border-radius: $radius-8;
+    background-color: $cultured;
+    padding: 24px 28px;
+    box-shadow: $shadow-2;
+    transition: $transition-1;
+
+    &:is(:hover, :focus-within) {
+      box-shadow: 0 20px 40px rgba($raisin-black, 0.05);
+      transform: translateY(-2px);
+    }
+
+    &.expanded {
+      background-color: $white;
+
+      .accordion-content {
+        max-height: max-content;
+        margin-block-start: 12px;
+        opacity: 1;
+      }
+
+      .accordion-btn ion-icon {
+        transform: rotate(0.5turn);
+      }
+    }
+
+    .card-title {
+      padding-block-end: 0;
+    }
+
+    .accordion-btn {
+      @include button-reset;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      text-align: left;
+
+      .span {
+        flex: 1;
+        transition: $transition-1;
+      }
+
+      ion-icon {
+        font-size: 2.2rem;
+        color: $blue-crayola;
+        transition: $transition-1;
+      }
+
+      &:is(:hover, :focus-visible) .span {
+        color: $violet-blue-crayola;
+      }
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      color: $black-coral;
+      transition: $transition-2;
+    }
+  }
+
+  @include tablet-up {
+    .faq-list {
+      gap: 24px;
+    }
+  }
+
+  @include desktop-up {
+    .faq-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 48px;
+    }
+  }
+}
