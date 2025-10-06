@@ -1,0 +1,63 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.project {
+  background-color: $cultured;
+
+  :is(.section-subtitle, .section-title) {
+    text-align: center;
+  }
+
+  .section-title {
+    margin-block-end: 50px;
+
+    @include laptop-up {
+      max-width: 32ch;
+      margin-inline: auto;
+    }
+  }
+
+  .grid-list {
+    @include desktop-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.project-card {
+  background-color: $white;
+  box-shadow: $shadow-2;
+  height: 100%;
+  border-radius: $radius-8;
+  overflow: hidden;
+
+  .card-content {
+    padding: 30px;
+
+    @include mobile-up {
+      padding: 40px;
+    }
+  }
+
+  .card-title {
+    transition: $transition-1;
+  }
+
+  .card-text {
+    margin-block: 16px 20px;
+  }
+
+  .card-meta-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .card-meta-item {
+    display: flex;
+    align-items: center;
+    color: $cadet-blue-crayola;
+    font-size: $fs-8;
+    gap: 4px;
+  }
+}
