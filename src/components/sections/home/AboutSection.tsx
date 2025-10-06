@@ -1,10 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import { useAccordion } from '../../../hooks/useAccordion';
 
 import './AboutSection.scss';
 
 const AboutSection = () => {
+  const { toggleAccordion, isExpanded } = useAccordion('professional-design');
+
   return (
     <section className="about" aria-labelledby="about-label">
       <div className="container">
@@ -30,9 +33,16 @@ const AboutSection = () => {
 
           <ul>
             <li className="about-item">
-              <div className="accordion-card expanded" data-accordion>
+              <div
+                className={`accordion-card ${isExpanded('professional-design') ? 'expanded' : ''}`}
+                data-accordion
+              >
                 <h3 className="card-title">
-                  <button className="accordion-btn" data-accordion-btn>
+                  <button
+                    className="accordion-btn"
+                    onClick={() => toggleAccordion('professional-design')}
+                    data-accordion-btn
+                  >
                     <ion-icon
                       name="chevron-down-outline"
                       aria-hidden={true}
@@ -53,9 +63,16 @@ const AboutSection = () => {
             </li>
 
             <li className="about-item">
-              <div className="accordion-card" data-accordion>
+              <div
+                className={`accordion-card ${isExpanded('top-notch-support') ? 'expanded' : ''}`}
+                data-accordion
+              >
                 <h3 className="card-title">
-                  <button className="accordion-btn" data-accordion-btn>
+                  <button
+                    className="accordion-btn"
+                    onClick={() => toggleAccordion('top-notch-support')}
+                    data-accordion-btn
+                  >
                     <ion-icon
                       name="chevron-down-outline"
                       aria-hidden={true}
@@ -76,9 +93,16 @@ const AboutSection = () => {
             </li>
 
             <li className="about-item">
-              <div className="accordion-card" data-accordion>
+              <div
+                className={`accordion-card ${isExpanded('exclusive-assets') ? 'expanded' : ''}`}
+                data-accordion
+              >
                 <h3 className="card-title">
-                  <button className="accordion-btn" data-accordion-btn>
+                  <button
+                    className="accordion-btn"
+                    onClick={() => toggleAccordion('exclusive-assets')}
+                    data-accordion-btn
+                  >
                     <ion-icon
                       name="chevron-down-outline"
                       aria-hidden={true}
