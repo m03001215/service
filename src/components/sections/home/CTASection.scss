@@ -1,0 +1,40 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.cta {
+  background-color: $charcoal;
+
+  .container {
+    padding-block: 100px 60px;
+    border-block-end: 1px solid $cadet-blue-crayola_a20;
+
+    @include laptop-up {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .section-title {
+    color: $white;
+    margin-block-end: 30px;
+
+    @include laptop-up {
+      max-width: 30ch;
+      margin-block-end: 0px;
+    }
+  }
+
+  .btn {
+    background-color: $violet-blue-crayola;
+    color: $white;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+
+    @include laptop-up {
+      min-width: max-content;
+    }
+  }
+}
