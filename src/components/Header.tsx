@@ -5,7 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NavLink, SocialLink } from '@/types';
-import styles from './Header.module.scss';
+
+import './Header.scss';
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -63,34 +64,28 @@ const Header = () => {
   };
 
   return (
-    <header
-      className={`${styles.header} ${isScrolled ? styles.active : ''}`}
-      data-header
-    >
+    <header className={`header ${isScrolled ? 'active' : ''}`} data-header>
       <div className="container">
-        <Link href="/" className={styles.logo}>
+        <Link href="/" className="logo">
           <Image
             src="/assets/images/logo-light.svg"
             width={74}
             height={24}
             alt="Adex home"
-            className={styles.logoLight}
+            className="logo-light"
           />
           <Image
             src="/assets/images/logo-dark.svg"
             width={74}
             height={24}
             alt="Adex home"
-            className={styles.logoDark}
+            className="logo-dark"
           />
         </Link>
 
-        <nav
-          className={`${styles.navbar} ${isNavOpen ? styles.active : ''}`}
-          data-navbar
-        >
-          <div className={styles.navbarTop}>
-            <Link href="/" className={styles.logo}>
+        <nav className={`navbar ${isNavOpen ? 'active' : ''}`} data-navbar>
+          <div className="navbar-top">
+            <Link href="/" className="logo">
               <Image
                 src="/assets/images/logo-light.svg"
                 width={74}
@@ -100,7 +95,7 @@ const Header = () => {
             </Link>
 
             <button
-              className={styles.navCloseBtn}
+              className="nav-close-btn"
               aria-label="close menu"
               onClick={toggleNav}
             >
@@ -108,12 +103,12 @@ const Header = () => {
             </button>
           </div>
 
-          <ul className={styles.navbarList}>
+          <ul className="navbar-list">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <Link
                   href={link.href}
-                  className={`${styles.navbarLink} ${pathname === link.href ? styles.active : ''}`}
+                  className={`navbar-link ${pathname === link.href ? 'active' : ''}`}
                   onClick={closeNav}
                 >
                   {link.label}
@@ -122,11 +117,11 @@ const Header = () => {
             ))}
           </ul>
 
-          <div className={styles.wrapper}>
-            <Link href="mailto:info@email.com" className={styles.contactLink}>
+          <div className="wrapper">
+            <Link href="mailto:info@email.com" className="contact-link">
               info@email.com
             </Link>
-            <Link href="tel:001234567890" className={styles.contactLink}>
+            <Link href="tel:001234567890" className="contact-link">
               00 (123) 456 78 90
             </Link>
           </div>
@@ -152,7 +147,7 @@ const Header = () => {
         </Link>
 
         <button
-          className={styles.navOpenBtn}
+          className="nav-open-btn"
           aria-label="open menu"
           onClick={toggleNav}
         >
@@ -160,7 +155,7 @@ const Header = () => {
         </button>
 
         <div
-          className={`${styles.overlay} ${isNavOpen ? styles.active : ''}`}
+          className={`overlay ${isNavOpen ? 'active' : ''}`}
           onClick={closeNav}
           data-overlay
         ></div>

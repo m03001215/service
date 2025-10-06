@@ -219,13 +219,15 @@ body {
 // Responsive breakpoints
 @include mobile-up {
   .container {
-    padding-inline: 20px;
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
   }
 }
 
 @include tablet-up {
   .container {
-    padding-inline: 30px;
+    max-width: 720px;
   }
 
   .grid-list {
@@ -233,13 +235,23 @@ body {
   }
 }
 
+@include laptop-up {
+  .container {
+    max-width: 960px;
+  }
+}
+
 @include desktop-up {
   .container {
-    max-width: 1200px;
+    max-width: 1140px;
   }
 }
 
 @include xl-desktop-up {
+  .container {
+    max-width: 1320px;
+  }
+
   .grid-list {
     gap: 40px;
   }

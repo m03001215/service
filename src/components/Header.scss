@@ -1,46 +1,6 @@
 @import '../styles/variables';
 @import '../styles/mixins';
 
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-block: 20px;
-  box-shadow: $shadow-1;
-  z-index: 4;
-
-  .btn {
-    display: none;
-  }
-
-  &.active {
-    background-color: $white;
-    position: fixed;
-    animation: slideIn 0.5s ease forwards;
-
-    .logoLight,
-    .navOpenBtn {
-      display: none;
-    }
-
-    .logoDark {
-      display: block;
-    }
-
-    .navOpenBtn {
-      color: $charcoal;
-    }
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-  }
-}
-
 @keyframes slideIn {
   0% {
     transform: translateY(-100%);
@@ -50,20 +10,62 @@
   }
 }
 
-.logo {
-  .logoDark {
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 20px;
+  box-shadow: $shadow-1;
+  z-index: 4;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-light {
+    display: block;
+  }
+
+  .logo-dark {
     display: none;
   }
 
-  .logoLight {
-    display: block;
-  }
-}
+  .btn {
+    display: none;
 
-.navOpenBtn {
-  @include button-reset;
-  font-size: 3.5rem;
-  color: $white;
+    @include tablet-up {
+      display: block;
+      margin-inline-start: auto;
+      padding: 8px 20px;
+    }
+
+    @include laptop-up {
+      margin-inline-start: 0;
+    }
+  }
+
+  &.active {
+    background-color: $white;
+    position: fixed;
+    animation: slideIn 0.5s ease forwards;
+
+    .logo-dark {
+      display: block;
+    }
+
+    .logo-light,
+    .nav-open-btn {
+      display: none;
+    }
+
+    .nav-open-btn {
+      color: $charcoal;
+    }
+  }
 }
 
 .navbar {
@@ -87,17 +89,41 @@
   &.active {
     visibility: visible;
     transform: translateX(300px);
+
+    @include laptop-up {
+      all: unset;
+      display: block;
+      margin-inline: auto 24px;
+    }
+  }
+
+  @include laptop-up {
+    all: unset;
+    display: block;
+    margin-inline: auto 24px;
+
+    > :not(.navbar-list) {
+      display: none;
+    }
   }
 }
 
-.navbarTop {
+.navbar-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navCloseBtn {
-  @include button-reset;
+.nav-open-btn {
+  font-size: 3.5rem;
+  color: $white;
+
+  @include laptop-up {
+    display: none;
+  }
+}
+
+.nav-close-btn {
   background-color: $white_a8;
   color: $white;
   font-size: 2rem;
@@ -114,14 +140,18 @@
   }
 }
 
-.navbarList {
+.navbar-list {
   margin-block-end: auto;
+
+  @include laptop-up {
+    display: flex;
+    gap: 30px;
+  }
 }
 
-.navbarLink {
+.navbar-link {
   font-weight: $fw-700;
   padding-block: 6px;
-  transition: $transition-1;
 
   &.active {
     color: $white;
@@ -142,15 +172,14 @@
   &:is(:hover, :focus-visible) {
     color: $violet-blue-crayola;
   }
+
+  @include laptop-up {
+    color: $white;
+    transition: $transition-1;
+  }
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.contactLink {
+.contact-link {
   transition: $transition-1;
 
   &:is(:hover, :focus-visible) {
@@ -173,37 +202,8 @@
     pointer-events: all;
     opacity: 0.8;
   }
-}
 
-// Desktop styles
-@include tablet-up {
-  .header {
-    .btn {
-      display: block;
-    }
-  }
-
-  .navOpenBtn {
-    display: none;
-  }
-
-  .navbar {
-    all: unset;
-    margin-inline: auto;
-  }
-
-  .navbarTop,
-  .navCloseBtn {
-    display: none;
-  }
-
-  .navbarList {
-    display: flex;
-    gap: 30px;
-    margin: 0;
-  }
-
-  .wrapper {
+  @include laptop-up {
     display: none;
   }
 }

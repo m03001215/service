@@ -94,10 +94,7 @@ $xl-desktop: 1399px;
 }
 
 @mixin container {
-  max-width: 1200px;
-  width: 100%;
-  margin-inline: auto;
-  padding-inline: 20px;
+  padding-inline: 16px;
 }
 
 @mixin grid-list {

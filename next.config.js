@@ -17,8 +17,8 @@ const nextConfig = {
         source: '/favicon.svg',
         destination: '/assets/images/favicon.svg',
       },
-    ]
+    ];
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
