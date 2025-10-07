@@ -1,0 +1,116 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.services-overview {
+  position: relative;
+  background:
+    radial-gradient(
+      circle at 8% 12%,
+      rgba($violet-blue-crayola, 0.08),
+      transparent 42%
+    ),
+    linear-gradient(180deg, rgba($lavender-web, 0.45), rgba($white, 0));
+
+  .container {
+    display: grid;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .section-title {
+    max-width: 35ch;
+    margin-inline: auto;
+  }
+
+  .grid-list {
+    @include grid-list;
+    gap: 28px;
+  }
+
+  .service-card {
+    position: relative;
+    padding: 44px 36px;
+    border-radius: $radius-8;
+    box-shadow: $shadow-2;
+    background: rgba($white, 0.95);
+    border: 1px solid rgba($violet-blue-crayola, 0.08);
+    display: grid;
+    gap: 18px;
+    transition:
+      transform $transition-2,
+      box-shadow $transition-2;
+    isolation: isolate;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--card-accent, rgba($violet-blue-crayola, 0.16));
+      opacity: 0.18;
+      z-index: -1;
+      transition: opacity $transition-2;
+    }
+
+    &:is(:hover, :focus-visible, :focus-within) {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 45px rgba($charcoal, 0.12);
+
+      &::before {
+        opacity: 0.32;
+      }
+    }
+
+    .card-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: $radius-circle;
+      background: var(--card-accent, rgba($violet-blue-crayola, 0.4));
+      @include flex-center;
+      color: $white;
+      font-size: 2.4rem;
+      margin-inline: auto;
+
+      ion-icon {
+        --ionicon-stroke-width: 48px;
+      }
+    }
+
+    .btn-text {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: $violet-blue-crayola;
+      font-weight: $fw-700;
+      transition: $transition-1;
+
+      &:is(:hover, :focus-visible) {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  @include tablet-up {
+    padding-block: calc(#{$section-padding} - 20px)
+      calc(#{$section-padding} - 10px);
+
+    .grid-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @include desktop-up {
+    .grid-list {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+}

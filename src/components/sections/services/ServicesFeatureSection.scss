@@ -1,0 +1,111 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.services-feature {
+  background-color: $white;
+
+  .container {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .feature-banner {
+    position: relative;
+    border-radius: $radius-10;
+    overflow: hidden;
+
+    .glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 30% 20%,
+          rgba($violet-blue-crayola, 0.32),
+          transparent 55%
+        ),
+        radial-gradient(
+          circle at 78% 65%,
+          rgba($blue-crayola, 0.26),
+          transparent 60%
+        );
+      opacity: 0.65;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  .feature-content {
+    display: grid;
+    gap: 20px;
+  }
+
+  .section-text {
+    max-width: 52ch;
+  }
+
+  .feature-list {
+    display: grid;
+    gap: 16px;
+  }
+
+  .feature-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: $charcoal;
+    font-weight: $fw-700;
+    transition:
+      transform $transition-1,
+      box-shadow $transition-1;
+
+    &:is(:hover, :focus-visible) {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 30px rgba($violet-blue-crayola, 0.15);
+    }
+
+    .card-icon {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: $radius-circle;
+      background: rgba($violet-blue-crayola, 0.12);
+      color: $violet-blue-crayola;
+
+      ion-icon {
+        --ionicon-stroke-width: 38px;
+      }
+    }
+
+    span:last-child {
+      width: calc(100% - 42px);
+      line-height: 2.4rem;
+    }
+  }
+
+  @include tablet-up {
+    .container {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @include desktop-up {
+    .container {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 60px;
+    }
+
+    .feature-content {
+      gap: 24px;
+    }
+
+    .feature-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}

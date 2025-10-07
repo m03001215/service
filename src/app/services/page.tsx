@@ -1,5 +1,10 @@
 import { Metadata } from 'next';
 import Layout from '@/components/Layout';
+import ServicesCTASection from '@/components/sections/services/ServicesCTASection';
+import ServicesFeatureSection from '@/components/sections/services/ServicesFeatureSection';
+import ServicesHeroSection from '@/components/sections/services/ServicesHeroSection';
+import ServiceOverviewSection from '@/components/sections/services/ServiceOverviewSection';
+import ServicesProcessSection from '@/components/sections/services/ServicesProcessSection';
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -10,25 +15,12 @@ export const metadata: Metadata = {
 export default function Services() {
   return (
     <Layout>
-      <article>
-        <section
-          className="section page-hero has-bg-image"
-          style={{ backgroundImage: "url('/assets/images/hero-bg.jpg')" }}
-        >
-          <div className="container">
-            <h1 className="h1 page-hero-title">Our Services</h1>
-            <p className="section-text">
-              Comprehensive digital solutions tailored to your business needs.
-            </p>
-            <nav className="breadcrumb">
-              <a href="/" className="breadcrumb-link">
-                Home
-              </a>
-              <span>/</span>
-              <span className="breadcrumb-current">Services</span>
-            </nav>
-          </div>
-        </section>
+      <article className="services-page">
+        <ServicesHeroSection />
+        <ServiceOverviewSection />
+        <ServicesProcessSection />
+        <ServicesFeatureSection />
+        <ServicesCTASection />
       </article>
     </Layout>
   );
