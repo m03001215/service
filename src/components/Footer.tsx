@@ -1,11 +1,12 @@
 'use client';
 
+import { yupResolver } from '@hookform/resolvers/yup';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { SocialLink, NewsletterFormData } from '@/types';
+
+import type { SocialLink, NewsletterFormData } from '@/types';
 import './Footer.scss';
 
 // Validation schema
@@ -45,7 +46,6 @@ const Footer = () => {
   const onSubmit = async (data: NewsletterFormData) => {
     try {
       // Handle newsletter subscription logic here
-      // TODO: Replace with actual API call
       // Example: await subscribeToNewsletter(data.email);
 
       // Simulate API call with the email data
@@ -58,6 +58,7 @@ const Footer = () => {
       alert(`Successfully subscribed ${data.email} to newsletter!`);
     } catch (error) {
       // You can add error notification here
+      console.error('Newsletter subscription failed:', error);
       alert('Failed to subscribe. Please try again.');
     }
   };

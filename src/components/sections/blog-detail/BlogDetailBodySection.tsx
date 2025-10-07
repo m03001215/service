@@ -1,10 +1,9 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { Fragment } from 'react';
 
-import { motion } from 'framer-motion';
-
-import {
+import type {
   BlogContentSection,
   BlogPostDetail,
   BlogSectionAside,

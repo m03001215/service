@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { NavLink, SocialLink } from '@/types';
+import { useState, useEffect } from 'react';
+
+import type { NavLink, SocialLink } from '@/types';
 
 import './Header.scss';
 
@@ -157,6 +158,15 @@ const Header = () => {
         <div
           className={`overlay ${isNavOpen ? 'active' : ''}`}
           onClick={closeNav}
+          onKeyDown={e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              closeNav();
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Close navigation menu"
           data-overlay
         ></div>
       </div>

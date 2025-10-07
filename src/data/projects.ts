@@ -1,4 +1,4 @@
-import { ProjectDetail } from '@/types';
+import type { ProjectDetail } from '@/types';
 
 type ProjectDetailMap = Record<string, ProjectDetail>;
 

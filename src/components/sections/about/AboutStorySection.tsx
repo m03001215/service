@@ -1,8 +1,8 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useMemo } from 'react';
-import { motion } from 'framer-motion';
 
 import { useAccordion } from '@/hooks/useAccordion';
 import { fadeIn, fadeInScale, staggerContainer } from '@/utils/motion';

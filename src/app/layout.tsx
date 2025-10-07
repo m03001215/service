@@ -1,60 +1,18 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+
+import { defaultMetadata } from '@/config/seo';
 import '@/styles/globals.scss';
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s | Adex Digital Studio',
-    default: 'Adex • Digital Product Studio',
-  },
-  description:
-    'Partner with Adex to design standout digital products, launch faster, and grow sustainably.',
-  keywords: [
-    'digital agency',
-    'web design',
-    'web development',
-    'mobile app development',
-    'UX/UI design',
-    'branding',
-    'digital marketing',
-    'product development',
+export const metadata: Metadata = defaultMetadata;
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
   ],
-  authors: [{ name: 'Adex Digital Studio' }],
-  icons: {
-    icon: [
-      {
-        url: '/favicon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://adex-agency.com',
-    siteName: 'Adex Digital Studio',
-    title: 'Adex • Digital Product Studio',
-    description:
-      'Partner with Adex to design standout digital products, launch faster, and grow sustainably.',
-    images: [
-      {
-        url: '/assets/images/hero-slide-1.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Adex Digital Studio - Crafting Digital Excellence',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Adex • Digital Product Studio',
-    description:
-      'Partner with Adex to design standout digital products, launch faster, and grow sustainably.',
-    images: ['/assets/images/hero-slide-1.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
 
 export default function RootLayout({

@@ -1,4 +1,5 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+
 import Layout from '@/components/Layout';
 import ConnectSection from '@/components/sections/contact/ConnectSection';
 import FAQSection from '@/components/sections/contact/FAQSection';

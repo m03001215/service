@@ -1,12 +1,13 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+
 import Layout from '@/components/Layout';
-import HeroSection from '@/components/sections/home/HeroSection';
-import ServiceSection from '@/components/sections/home/ServiceSection';
 import AboutSection from '@/components/sections/home/AboutSection';
-import FeatureSection from '@/components/sections/home/FeatureSection';
-import StatSection from '@/components/sections/home/StatSection';
-import ProjectSection from '@/components/sections/home/ProjectSection';
 import CTASection from '@/components/sections/home/CTASection';
+import FeatureSection from '@/components/sections/home/FeatureSection';
+import HeroSection from '@/components/sections/home/HeroSection';
+import ProjectSection from '@/components/sections/home/ProjectSection';
+import ServiceSection from '@/components/sections/home/ServiceSection';
+import StatSection from '@/components/sections/home/StatSection';
 
 export const metadata: Metadata = {
   title: 'Adex • Digital Product Studio',

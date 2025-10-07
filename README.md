@@ -8,10 +8,12 @@ A modern, responsive agency website built with Next.js 14, TypeScript, and SCSS.
 - **TypeScript** for type safety and better developer experience
 - **SCSS Modules** for component-scoped styling
 - **Responsive Design** optimized for all devices
-- **SEO Optimized** with Next.js Metadata API
-- **Image Optimization** with Next.js Image component
+- **SEO Optimized** with Next.js Metadata API & next-seo
+- **Image Optimization** with Next.js Image component (AVIF/WebP)
 - **Interactive Components** with smooth animations
 - **Modern Performance** with optimized loading and caching
+- **Security Hardened** with comprehensive security headers
+- **Code Quality** with ESLint, TypeScript, and Prettier
 
 ## 🛠 Tech Stack
 
@@ -20,9 +22,20 @@ A modern, responsive agency website built with Next.js 14, TypeScript, and SCSS.
 - **Styling:** SCSS/Sass with CSS Modules
 - **Icons:** Ionicons
 - **Fonts:** Google Fonts (Manrope)
-- **Package Manager:** npm
+- **Package Manager:** Yarn
 - **Linting:** ESLint + Prettier
+- **SEO:** next-seo, next-sitemap
+- **Validation:** Zod
 - **Development:** Hot reload with Next.js dev server
+
+## 📚 Documentation
+
+- **[QUICK-REFERENCE.md](QUICK-REFERENCE.md)** - Quick reference guide (English/Tiếng Việt)
+- **[OPTIMIZATION-SUMMARY.md](OPTIMIZATION-SUMMARY.md)** - Full optimization summary
+- **[TOM-TAT-TOI-UU.md](TOM-TAT-TOI-UU.md)** - Tóm tắt tối ưu hóa (Tiếng Việt)
+- **[docs/CONFIGURATION.md](docs/CONFIGURATION.md)** - Complete configuration guide
+- **[docs/RECOMMENDED-PACKAGES.md](docs/RECOMMENDED-PACKAGES.md)** - Additional packages guide
+- **[docs/RELEASE.md](docs/RELEASE.md)** - Release workflow documentation
 
 ## 📁 Project Structure
 

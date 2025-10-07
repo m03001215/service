@@ -1,4 +1,5 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+
 import Layout from '@/components/Layout';
 import BlogHeroSection from '@/components/sections/blog/BlogHeroSection';
 import BlogNewsletterSection from '@/components/sections/blog/BlogNewsletterSection';

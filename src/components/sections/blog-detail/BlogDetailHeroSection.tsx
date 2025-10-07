@@ -1,9 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-import { BlogPostDetail } from '@/types';
+import type { BlogPostDetail } from '@/types';
 import { fadeIn, fadeInScale, staggerContainer } from '@/utils/motion';
 
 import './BlogDetailHeroSection.scss';

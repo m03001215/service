@@ -1,10 +1,11 @@
 'use client';
 
+import { yupResolver } from '@hookform/resolvers/yup';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { ProjectContactFormData } from '@/types';
+
+import type { ProjectContactFormData } from '@/types';
 
 import './ConnectSection.scss';
 
@@ -54,7 +55,6 @@ const ConnectSection = () => {
   const onSubmit = async (data: ProjectContactFormData) => {
     try {
       // Handle form submission logic here
-      // TODO: Replace with actual API call
       // Example: await submitProjectContact(data);
 
       // Simulate API call
@@ -69,6 +69,7 @@ const ConnectSection = () => {
       );
     } catch (error) {
       // You can add error notification here
+      console.error('Form submission error:', error);
       alert('Failed to submit request. Please try again.');
     }
   };

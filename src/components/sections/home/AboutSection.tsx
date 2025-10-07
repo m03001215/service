@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+
 import { useAccordion } from '../../../hooks/useAccordion';
 
 import './AboutSection.scss';

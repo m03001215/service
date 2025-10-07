@@ -1,10 +1,13 @@
 'use client';
 
 import { useEffect } from 'react';
+
+import type { LayoutProps } from '@/types';
+
 import { useScroll } from '../hooks/useScroll';
-import Header from './Header';
+
 import Footer from './Footer';
-import { LayoutProps } from '@/types';
+import Header from './Header';
 
 export default function Layout({ children }: LayoutProps) {
   const { scrollY, isAtTop } = useScroll();

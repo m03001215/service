@@ -1,4 +1,5 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+
 import Layout from '@/components/Layout';
 import ProjectsCTASection from '@/components/sections/projects/ProjectsCTASection';
 import ProjectsHeroSection from '@/components/sections/projects/ProjectsHeroSection';

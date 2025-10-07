@@ -1,10 +1,9 @@
 'use client';
 
-import type { CSSProperties } from 'react';
-
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import type { CSSProperties } from 'react';
 
 import { getSortedBlogPosts } from '@/data/blog';
 import { fadeIn, staggerContainer } from '@/utils/motion';

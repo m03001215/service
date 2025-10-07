@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-import { ProjectDetail } from '@/types';
+import type { ProjectDetail } from '@/types';
 import { fadeIn, fadeInScale, staggerContainer } from '@/utils/motion';
 
 import './ProjectDetailTimelineSection.scss';

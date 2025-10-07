@@ -1,9 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-import { ProjectDetail } from '@/types';
+import type { ProjectDetail } from '@/types';
 import { fadeIn, fadeInScale, staggerContainer } from '@/utils/motion';
 
 import './ProjectDetailTestimonialSection.scss';

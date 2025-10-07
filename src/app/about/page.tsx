@@ -1,10 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+
 import Layout from '@/components/Layout';
+import AboutCTASection from '@/components/sections/about/AboutCTASection';
 import AboutHeroSection from '@/components/sections/about/AboutHeroSection';
 import AboutStorySection from '@/components/sections/about/AboutStorySection';
-import AboutValuesSection from '@/components/sections/about/AboutValuesSection';
 import AboutTeamSection from '@/components/sections/about/AboutTeamSection';
-import AboutCTASection from '@/components/sections/about/AboutCTASection';
+import AboutValuesSection from '@/components/sections/about/AboutValuesSection';
 
 export const metadata: Metadata = {
   title: 'About Us',

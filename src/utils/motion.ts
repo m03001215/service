@@ -1,4 +1,4 @@
-import { Variants } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'none';
 

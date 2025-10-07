@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-import { BlogPostDetail } from '@/types';
+import type { BlogPostDetail } from '@/types';
 import { fadeIn, fadeInScale, staggerContainer } from '@/utils/motion';
 
 import './BlogDetailMetaSection.scss';

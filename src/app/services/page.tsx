@@ -1,9 +1,10 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+
 import Layout from '@/components/Layout';
+import ServiceOverviewSection from '@/components/sections/services/ServiceOverviewSection';
 import ServicesCTASection from '@/components/sections/services/ServicesCTASection';
 import ServicesFeatureSection from '@/components/sections/services/ServicesFeatureSection';
 import ServicesHeroSection from '@/components/sections/services/ServicesHeroSection';
-import ServiceOverviewSection from '@/components/sections/services/ServiceOverviewSection';
 import ServicesProcessSection from '@/components/sections/services/ServicesProcessSection';
 
 export const metadata: Metadata = {
