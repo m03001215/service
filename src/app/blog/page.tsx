@@ -1,5 +1,8 @@
 import { Metadata } from 'next';
 import Layout from '@/components/Layout';
+import BlogHeroSection from '@/components/sections/blog/BlogHeroSection';
+import BlogNewsletterSection from '@/components/sections/blog/BlogNewsletterSection';
+import BlogPostsSection from '@/components/sections/blog/BlogPostsSection';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -10,25 +13,10 @@ export const metadata: Metadata = {
 export default function Blog() {
   return (
     <Layout>
-      <article>
-        <section
-          className="section page-hero has-bg-image"
-          style={{ backgroundImage: "url('/assets/images/hero-bg.jpg')" }}
-        >
-          <div className="container">
-            <h1 className="h1 page-hero-title">Our Blog</h1>
-            <p className="section-text">
-              Insights, trends, and expert advice from the digital world.
-            </p>
-            <nav className="breadcrumb">
-              <a href="/" className="breadcrumb-link">
-                Home
-              </a>
-              <span>/</span>
-              <span className="breadcrumb-current">Blog</span>
-            </nav>
-          </div>
-        </section>
+      <article className="blog-page">
+        <BlogHeroSection />
+        <BlogPostsSection />
+        <BlogNewsletterSection />
       </article>
     </Layout>
   );

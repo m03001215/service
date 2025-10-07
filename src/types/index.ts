@@ -108,16 +108,84 @@ export interface ContactInfo {
 }
 
 // Blog Post Interface
-export interface BlogPost {
+export interface BlogSectionListItem {
+  text: string;
+  icon?: string;
+}
+
+export interface BlogSectionTimelineItem {
+  marker: string;
+  title: string;
+  text: string;
+}
+
+export interface BlogSectionTable {
+  headers: string[];
+  rows: string[][];
+}
+
+export interface BlogSectionCard {
+  title: string;
+  text: string;
+}
+
+export type BlogAsideType =
+  | 'list'
+  | 'timeline'
+  | 'tags'
+  | 'table'
+  | 'cards'
+  | 'text';
+
+export interface BlogSectionAside {
+  type: BlogAsideType;
+  title: string;
+  description?: string;
+  listItems?: BlogSectionListItem[];
+  timelineItems?: BlogSectionTimelineItem[];
+  tags?: string[];
+  table?: BlogSectionTable;
+  cards?: BlogSectionCard[];
+  paragraphs?: string[];
+}
+
+export interface BlogSubsection {
+  heading: string;
+  paragraphs?: string[];
+  listItems?: BlogSectionListItem[];
+  timelineItems?: BlogSectionTimelineItem[];
+}
+
+export interface BlogContentSection {
   id: string;
+  heading: string;
+  paragraphs: string[];
+  subsections?: BlogSubsection[];
+  table?: BlogSectionTable;
+  aside?: BlogSectionAside;
+}
+
+export interface BlogPostDetail {
+  slug: string;
   title: string;
   excerpt: string;
-  content: string;
-  image: string;
+  heroEyebrow: string;
+  heroDescription: string;
+  heroImage: string;
+  heroImageAlt: string;
+  breadcrumbCurrent: string;
   date: string;
-  category: string;
+  dateLabel: string;
   author: string;
-  href: string;
+  authorBio: string;
+  readingTime: string;
+  topics: string[];
+  sections: BlogContentSection[];
+  cta: {
+    heading: string;
+    buttonLabel: string;
+    buttonHref: string;
+  };
 }
 
 // Form Data Interfaces

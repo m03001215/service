@@ -1,0 +1,47 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.blog-detail-cta {
+  padding-block: 100px;
+
+  .cta-panel {
+    position: relative;
+    border-radius: $radius-32;
+    padding: 64px 48px;
+    background: linear-gradient(135deg, $violet-blue-crayola, $blue-crayola);
+    overflow: hidden;
+    color: $white;
+    display: grid;
+    gap: 24px;
+    justify-items: start;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: auto -80px -160px auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba($white, 0.12);
+      filter: blur(0px);
+    }
+  }
+
+  .section-title {
+    color: $white;
+    max-width: 520px;
+  }
+
+  .btn-primary {
+    background: $white;
+    color: $charcoal;
+  }
+
+  @include tablet-up {
+    padding-block: 120px;
+
+    .cta-panel {
+      padding: 80px 72px;
+    }
+  }
+}

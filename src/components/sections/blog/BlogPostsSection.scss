@@ -1,0 +1,114 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.blog-list {
+  .section-title {
+    max-width: 680px;
+    margin-block-end: 32px;
+  }
+
+  .grid-list {
+    margin-block-start: 42px;
+  }
+
+  .blog-card {
+    display: grid;
+    gap: 20px;
+    height: 100%;
+    border-radius: $radius-24;
+    overflow: hidden;
+    background: linear-gradient(
+      140deg,
+      rgba($white, 0.9) 0%,
+      rgba($lavender-web, 0.85) 80%
+    );
+    box-shadow: $shadow-1;
+    transition:
+      transform $transition-2,
+      box-shadow $transition-2;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 48px rgba($charcoal, 0.12);
+    }
+  }
+
+  .blog-card__media {
+    position: relative;
+    display: block;
+  }
+
+  .blog-card__badge {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    padding: 8px 16px;
+    border-radius: $radius-pill;
+    background-color: rgba($raisin-black, 0.8);
+    color: $white;
+    font-size: $fs-7;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    backdrop-filter: blur(6px);
+  }
+
+  .blog-card__content {
+    display: grid;
+    gap: 16px;
+    padding: 0 28px 28px;
+  }
+
+  .blog-card__title {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: $charcoal;
+
+    &:is(:hover, :focus-visible) {
+      color: $violet-blue-crayola;
+    }
+  }
+
+  .card-text {
+    color: $black-coral;
+    line-height: 1.65;
+  }
+
+  .card-meta-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    font-size: $fs-8;
+    color: $black-coral;
+    opacity: 0.9;
+
+    ion-icon {
+      font-size: 1.9rem;
+      color: $violet-blue-crayola;
+    }
+
+    .meta-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-meta-item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  @include tablet-up {
+    .grid-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @include laptop-up {
+    .grid-list {
+      gap: 36px;
+    }
+  }
+}
