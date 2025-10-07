@@ -1,0 +1,80 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.project-detail-metrics {
+  background-color: $charcoal;
+  color: $white;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at top right,
+      rgba($blue-crayola, 0.28),
+      transparent 55%
+    );
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .metrics-header {
+    max-width: 680px;
+
+    .section-title {
+      color: $white;
+    }
+  }
+
+  .metrics-grid {
+    margin-block-start: 40px;
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+
+  .metrics-card {
+    background: rgba($white, 0.08);
+    border-radius: $radius-24;
+    padding: 32px 28px;
+    border: 1px solid rgba($white, 0.12);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 24px 55px rgba($raisin-black, 0.25);
+    transition: $transition-1;
+
+    &:is(:hover, :focus-visible) {
+      transform: translateY(-8px);
+      border-color: rgba($white, 0.28);
+    }
+
+    .metric-value {
+      font-size: clamp(3.2rem, 3vw, 4.2rem);
+      font-weight: $fw-700;
+      margin-block-end: 12px;
+      color: $white;
+    }
+
+    .metric-label {
+      color: rgba($white, 0.85);
+      margin-block-end: 10px;
+    }
+
+    .metric-description {
+      color: rgba($white, 0.68);
+      font-size: $fs-7;
+      line-height: 1.7;
+    }
+  }
+
+  @include desktop-up {
+    .metrics-grid {
+      margin-block-start: 56px;
+      gap: 24px;
+    }
+  }
+}

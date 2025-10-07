@@ -1,0 +1,144 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.projects-highlights {
+  background: linear-gradient(
+    180deg,
+    rgba($lavender-web, 0.35),
+    rgba($white, 0)
+  );
+
+  .container {
+    display: grid;
+    gap: 48px;
+  }
+
+  .section-heading {
+    display: grid;
+    gap: 16px;
+    max-width: 68ch;
+  }
+
+  .grid-list {
+    display: grid;
+    gap: 28px;
+  }
+
+  .project-card {
+    display: grid;
+    gap: 0;
+    border-radius: $radius-10;
+    overflow: hidden;
+    background: $white;
+    box-shadow: 0 22px 40px rgba($charcoal, 0.1);
+    transition:
+      transform $transition-2,
+      box-shadow $transition-2;
+
+    &:is(:hover, :focus-visible, :focus-within) {
+      transform: translateY(-8px);
+      box-shadow: 0 32px 70px rgba($charcoal, 0.14);
+
+      .card-banner .badge {
+        transform: translate(12px, 12px);
+        opacity: 1;
+      }
+    }
+
+    .card-banner {
+      position: relative;
+      aspect-ratio: 560 / 360;
+
+      .badge {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border-radius: $radius-circle;
+        background: rgba($charcoal, 0.75);
+        color: $white;
+        font-weight: $fw-700;
+        letter-spacing: 0.05em;
+        transition: $transition-2;
+        opacity: 0;
+      }
+
+      .img-cover {
+        @include img-cover;
+      }
+    }
+
+    .card-content {
+      padding: 32px 32px 36px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: $radius-pill;
+      background-color: rgba($violet-blue-crayola, 0.08);
+      color: $violet-blue-crayola;
+      font-size: $fs-8;
+      font-weight: $fw-700;
+      letter-spacing: 0.04em;
+
+      ion-icon {
+        --ionicon-stroke-width: 40px;
+      }
+    }
+
+    .card-title {
+      a {
+        color: inherit;
+        transition: $transition-1;
+      }
+
+      a:is(:hover, :focus-visible) {
+        color: $violet-blue-crayola;
+      }
+    }
+
+    .card-text {
+      color: $black-coral;
+    }
+
+    .btn-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: $violet-blue-crayola;
+      font-weight: $fw-700;
+      transition: $transition-1;
+
+      &:is(:hover, :focus-visible) {
+        gap: 10px;
+      }
+    }
+  }
+
+  @include tablet-up {
+    .grid-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px;
+    }
+  }
+
+  @include desktop-up {
+    .grid-list {
+      gap: 36px;
+    }
+  }
+}

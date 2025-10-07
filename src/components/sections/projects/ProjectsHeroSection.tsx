@@ -5,42 +5,38 @@ import { motion } from 'framer-motion';
 
 import { fadeIn, fadeInScale, staggerContainer } from '@/utils/motion';
 
-import './ServicesHeroSection.scss';
+import './ProjectsHeroSection.scss';
 
-const ServicesHeroSection = () => {
+const ProjectsHeroSection = () => {
   return (
     <motion.section
-      className="page-hero services-hero has-bg-image"
-      aria-label="Services"
+      className="page-hero projects-hero has-bg-image"
+      aria-label="Case studies"
       style={{ backgroundImage: "url('/assets/images/hero-bg.jpg')" }}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.55 }}
-      variants={staggerContainer(0.18, 0.05)}
+      variants={staggerContainer(0.2, 0.12)}
     >
-      <div className="noise" aria-hidden="true" />
-
-      <motion.div className="container" variants={staggerContainer(0.16, 0.12)}>
+      <motion.div className="container" variants={staggerContainer(0.16, 0.16)}>
         <motion.p
           className="section-subtitle"
-          variants={fadeIn('up', 24, 0.45)}
+          variants={fadeIn('up', 20, 0.45)}
         >
-          What we deliver
+          Case studies
         </motion.p>
-
         <motion.h1 className="h1 page-title" variants={fadeIn('up', 26, 0.55)}>
-          End-to-end product partnerships tailored to your roadmap.
+          Proof that bold ideas can scale beautifully.
         </motion.h1>
-
         <motion.p className="section-text" variants={fadeIn('up', 28, 0.65)}>
-          From discovery to scale, our blended teams plug directly into your
-          workflows to ship meaningful outcomes.
+          Explore a selection of collaborative launches spanning fintech, SaaS,
+          health tech, and the future of work.
         </motion.p>
 
         <motion.nav
           className="breadcrumb"
           aria-label="Breadcrumb"
-          variants={fadeInScale(0.6, 0.75)}
+          variants={fadeInScale(0.55, 0.75)}
         >
           <Link href="/" className="breadcrumb-link">
             Home
@@ -49,7 +45,7 @@ const ServicesHeroSection = () => {
             /
           </span>
           <span className="breadcrumb-current" aria-current="page">
-            Services
+            Projects
           </span>
         </motion.nav>
       </motion.div>
@@ -57,4 +53,4 @@ const ServicesHeroSection = () => {
   );
 };
 
-export default ServicesHeroSection;
+export default ProjectsHeroSection;

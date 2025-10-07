@@ -8,21 +8,10 @@
   text-align: center;
   overflow: hidden;
 
-  .hero-overlay,
   .noise {
     position: absolute;
     inset: 0;
     z-index: 0;
-  }
-
-  .hero-overlay {
-    background: linear-gradient(
-      135deg,
-      rgba($raisin-black, 0.75) 10%,
-      rgba($violet-blue-crayola, 0.72) 48%,
-      rgba($blue-crayola, 0.68) 100%
-    );
-    mix-blend-mode: multiply;
   }
 
   .noise {
@@ -46,7 +35,6 @@
   }
 
   .section-subtitle {
-    color: rgba($white, 0.86);
     letter-spacing: 0.12em;
   }
 

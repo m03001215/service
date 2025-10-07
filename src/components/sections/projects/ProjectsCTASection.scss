@@ -1,0 +1,101 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.projects-cta {
+  position: relative;
+  padding-block: calc(#{$section-padding} - 20px)
+    calc(#{$section-padding} - 50px);
+  background: linear-gradient(
+    135deg,
+    rgba($violet-blue-crayola, 0.95),
+    rgba($charcoal, 0.94)
+  );
+  color: $white;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.7;
+    z-index: 0;
+  }
+
+  &::before {
+    background: rgba($blue-crayola, 0.5);
+    top: -140px;
+    left: -120px;
+  }
+
+  &::after {
+    background: rgba($pink, 0.45);
+    bottom: -130px;
+    right: -110px;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 18px;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .eyebrow {
+    font-size: $fs-8;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba($white, 0.7);
+  }
+
+  .section-title {
+    color: $white;
+    max-width: 28ch;
+    text-wrap: balance;
+  }
+
+  .section-text {
+    color: rgba($white, 0.8);
+    max-width: 50ch;
+  }
+
+  .btn {
+    background-color: $white;
+    border: none;
+    color: $charcoal;
+    box-shadow: 0 18px 30px rgba($raisin-black, 0.25);
+
+    &:is(:hover, :focus-visible) {
+      transform: translateY(-6px);
+    }
+  }
+
+  @include tablet-up {
+    padding-block: $section-padding;
+
+    .container {
+      gap: 24px;
+    }
+  }
+
+  @include desktop-up {
+    .container {
+      text-align: left;
+      justify-items: start;
+      max-width: 840px;
+    }
+
+    .section-title {
+      max-width: 32ch;
+    }
+
+    .section-text {
+      max-width: 48ch;
+    }
+  }
+}

@@ -33,6 +33,53 @@ export interface ProjectCard {
   category: string;
 }
 
+export interface ProjectMetric {
+  id: string;
+  value: string;
+  label: string;
+  description: string;
+}
+
+export interface ProjectTimelineItem {
+  id: string;
+  title: string;
+  description: string;
+  duration: string;
+}
+
+export interface ProjectTestimonial {
+  quote: string;
+  person: string;
+  role: string;
+}
+
+export interface ProjectHeroStat {
+  label: string;
+  value: string;
+}
+
+export interface ProjectDetail {
+  slug: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  heroEyebrow: string;
+  heroImage: string;
+  category: string;
+  date: string;
+  dateLabel: string;
+  location?: string;
+  services: string[];
+  heroStats: ProjectHeroStat[];
+  challenge: string;
+  solution: string[];
+  outcomes: string[];
+  metrics: ProjectMetric[];
+  timeline: ProjectTimelineItem[];
+  testimonial: ProjectTestimonial;
+  nextProjectSlug?: string;
+}
+
 // Feature Card Interface
 export interface FeatureCard {
   icon: string;

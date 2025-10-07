@@ -1,0 +1,117 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.project-detail-timeline {
+  background-color: $white;
+
+  .timeline-header {
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .timeline-list {
+    margin-block-start: 56px;
+    display: grid;
+    gap: 32px;
+    counter-reset: step;
+  }
+
+  .timeline-item {
+    display: grid;
+    gap: 16px;
+    padding: 32px;
+    border-radius: $radius-24;
+    border: 1px solid rgba($charcoal, 0.08);
+    background: linear-gradient(133deg, rgba($cultured, 0.85), $white);
+    box-shadow: 0 20px 60px rgba($charcoal, 0.08);
+
+    .timeline-marker {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          $violet-blue-crayola,
+          $blue-crayola
+        );
+        color: $white;
+        font-weight: $fw-700;
+      }
+
+      .connector {
+        flex: 1;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          rgba($violet-blue-crayola, 0.35),
+          transparent
+        );
+      }
+    }
+
+    .timeline-content {
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+
+        .duration {
+          font-size: $fs-7;
+          font-weight: $fw-700;
+          padding: 8px 14px;
+          border-radius: $radius-pill;
+          background-color: rgba($violet-blue-crayola, 0.08);
+          color: $violet-blue-crayola;
+        }
+      }
+
+      p {
+        margin-block-start: 14px;
+        color: $black-coral;
+        font-size: $fs-6;
+        line-height: 1.7;
+      }
+    }
+  }
+
+  @include tablet-up {
+    .timeline-item {
+      grid-template-columns: 160px 1fr;
+      align-items: start;
+
+      .timeline-marker {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+
+        .connector {
+          flex: unset;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(
+            180deg,
+            rgba($violet-blue-crayola, 0.35),
+            transparent
+          );
+        }
+      }
+    }
+  }
+
+  @include desktop-up {
+    .timeline-list {
+      gap: 40px;
+    }
+  }
+}

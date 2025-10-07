@@ -1,0 +1,80 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.project-detail-navigation {
+  background-color: $cultured;
+
+  .nav-grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .nav-card {
+    background: $white;
+    border-radius: $radius-32;
+    border: 1px solid rgba($charcoal, 0.08);
+    box-shadow: 0 24px 60px rgba($charcoal, 0.08);
+    padding: 32px;
+    display: grid;
+    gap: 18px;
+
+    .label {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: $fs-8;
+      color: rgba($charcoal, 0.6);
+    }
+
+    .card-body {
+      display: grid;
+      gap: 18px;
+      transition: $transition-1;
+
+      &:is(:hover, :focus-visible) {
+        transform: translateY(-6px);
+      }
+
+      .card-banner {
+        border-radius: $radius-24;
+        overflow: hidden;
+        aspect-ratio: 16 / 10;
+      }
+
+      .card-content {
+        display: grid;
+        gap: 12px;
+
+        p {
+          color: $black-coral;
+          font-size: $fs-6;
+          line-height: 1.7;
+        }
+      }
+
+      .link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: $fw-700;
+        color: $violet-blue-crayola;
+        font-size: $fs-6;
+
+        ion-icon {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  @include tablet-up {
+    .nav-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @include desktop-up {
+    .nav-card {
+      padding: 40px;
+    }
+  }
+}

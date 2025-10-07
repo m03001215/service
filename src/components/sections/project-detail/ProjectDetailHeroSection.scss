@@ -1,0 +1,320 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.project-detail-hero {
+  position: relative;
+  padding-block: clamp(160px, 24vh, 220px) clamp(96px, 20vh, 180px);
+  color: $white;
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    rgba($oxford-blue, 0.92),
+    rgba($charcoal, 0.94)
+  );
+
+  .ambient-glow,
+  .texture {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .ambient-glow {
+    background:
+      radial-gradient(
+        circle at top left,
+        rgba($blue-crayola, 0.45),
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at bottom right,
+        rgba($pink, 0.24),
+        transparent 55%
+      );
+    mix-blend-mode: screen;
+  }
+
+  .texture {
+    opacity: 0.4;
+    background-image:
+      linear-gradient(0deg, rgba($white, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba($white, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .hero-layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 36px;
+    text-align: left;
+  }
+
+  .hero-content {
+    display: grid;
+    gap: 20px;
+    max-width: 680px;
+  }
+
+  h1 {
+    color: $white;
+  }
+
+  .breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: $radius-pill;
+    background: rgba($white, 0.08);
+    backdrop-filter: blur(12px);
+    font-size: $fs-8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    .breadcrumb-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: $fw-700;
+      transition: $transition-1;
+
+      ion-icon {
+        font-size: 1.6rem;
+      }
+
+      &:is(:hover, :focus-visible) {
+        opacity: 0.85;
+        transform: translateX(-2px);
+      }
+    }
+
+    .breadcrumb-current {
+      font-weight: $fw-700;
+      color: rgba($white, 0.75);
+    }
+  }
+
+  .hero-eyebrow {
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-size: $fs-8;
+    color: rgba($white, 0.74);
+  }
+
+  .hero-subtitle {
+    color: rgba($white, 0.88);
+    max-width: 70ch;
+    font-size: $fs-5;
+    line-height: 1.7;
+  }
+
+  .hero-meta {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, max-content));
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: $radius-pill;
+      background-color: rgba($white, 0.08);
+      border: 1px solid rgba($white, 0.12);
+      color: rgba($white, 0.82);
+      backdrop-filter: blur(10px);
+
+      ion-icon {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    li {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: $radius-pill;
+      border: 1px solid rgba($white, 0.16);
+      background: rgba($white, 0.06);
+      font-size: $fs-7;
+      color: rgba($white, 0.78);
+      backdrop-filter: blur(10px);
+
+      ion-icon {
+        font-size: 1.6rem;
+        color: rgba($white, 0.85);
+      }
+    }
+  }
+
+  .hero-stats {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+
+    .hero-stat {
+      background: rgba($white, 0.08);
+      border: 1px solid rgba($white, 0.16);
+      border-radius: $radius-16;
+      padding: 24px 22px;
+      backdrop-filter: blur(14px);
+      transition: $transition-1;
+
+      &:is(:hover, :focus-visible) {
+        transform: translateY(-6px);
+        border-color: rgba($white, 0.28);
+        box-shadow: 0 18px 38px rgba($raisin-black, 0.3);
+      }
+
+      .value {
+        font-size: clamp(2.4rem, 2.6vw, 3.6rem);
+        font-weight: $fw-700;
+        color: $white;
+        margin-block-end: 6px;
+      }
+
+      .label {
+        font-size: $fs-7;
+        color: rgba($white, 0.75);
+      }
+    }
+  }
+
+  .hero-media {
+    position: relative;
+    display: grid;
+    gap: 16px;
+    justify-items: center;
+  }
+
+  .hero-figure {
+    position: relative;
+    width: min(680px, 100%);
+    border-radius: $radius-24;
+    overflow: hidden;
+    border: 1px solid rgba($white, 0.18);
+    box-shadow: 0 28px 60px rgba($raisin-black, 0.35);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba($charcoal, 0) 45%,
+        rgba($charcoal, 0.38)
+      );
+      pointer-events: none;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .media-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 16px 18px;
+    border-radius: $radius-16;
+    background: rgba($white, 0.12);
+    border: 1px solid rgba($white, 0.2);
+    backdrop-filter: blur(18px);
+    display: grid;
+    gap: 6px;
+    align-items: start;
+    color: $white;
+    min-width: 180px;
+
+    .badge-label {
+      font-size: $fs-8;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba($white, 0.7);
+    }
+
+    .badge-value {
+      font-size: clamp(2rem, 2.4vw, 2.8rem);
+      font-weight: $fw-700;
+    }
+
+    .badge-meta {
+      font-size: $fs-7;
+      color: rgba($white, 0.78);
+    }
+  }
+
+  .media-location {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    padding: 10px 16px;
+    border-radius: $radius-pill;
+    background: rgba($white, 0.12);
+    border: 1px solid rgba($white, 0.2);
+    backdrop-filter: blur(16px);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: $fs-7;
+    color: rgba($white, 0.85);
+
+    ion-icon {
+      font-size: 1.8rem;
+    }
+  }
+
+  @include tablet-up {
+    .hero-layout {
+      gap: 48px;
+    }
+
+    .hero-subtitle {
+      font-size: $fs-4;
+    }
+  }
+
+  @include laptop-up {
+    .hero-layout {
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 520px);
+      align-items: center;
+      gap: 56px;
+    }
+
+    .hero-content {
+      max-width: 640px;
+    }
+
+    .hero-media {
+      justify-items: stretch;
+    }
+
+    .hero-figure {
+      width: 100%;
+      min-height: 420px;
+    }
+  }
+
+  @include desktop-up {
+    padding-block: clamp(200px, 28vh, 240px) clamp(130px, 22vh, 200px);
+
+    .hero-layout {
+      gap: 72px;
+    }
+
+    .hero-figure {
+      border-radius: $radius-32;
+    }
+  }
+}

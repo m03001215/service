@@ -1,0 +1,110 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.project-detail-testimonial {
+  background: linear-gradient(
+    135deg,
+    rgba($raisin-black, 0.92),
+    rgba($oxford-blue, 0.92)
+  );
+  color: $white;
+
+  .container {
+    display: grid;
+    gap: 32px;
+  }
+
+  .testimonial-card {
+    background: rgba($white, 0.08);
+    border-radius: $radius-32;
+    padding: clamp(32px, 5vw, 48px);
+    border: 1px solid rgba($white, 0.12);
+    box-shadow: 0 30px 65px rgba($raisin-black, 0.4);
+    backdrop-filter: blur(16px);
+    display: grid;
+    gap: 20px;
+
+    .quote-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(
+        135deg,
+        rgba($violet-blue-crayola, 0.9),
+        rgba($blue-crayola, 0.9)
+      );
+      display: grid;
+      place-items: center;
+      color: $white;
+      font-size: 2.4rem;
+    }
+
+    .quote {
+      font-size: clamp(2.2rem, 2.8vw, 2.8rem);
+      line-height: 1.6;
+      color: $white;
+    }
+
+    .person {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .name {
+        font-weight: $fw-700;
+        font-size: $fs-5;
+      }
+
+      .role {
+        color: rgba($white, 0.7);
+        font-size: $fs-7;
+      }
+    }
+  }
+
+  .cta-card {
+    background: rgba($white, 0.08);
+    border-radius: $radius-32;
+    padding: clamp(32px, 5vw, 44px);
+    border: 1px solid rgba($white, 0.12);
+    display: grid;
+    gap: 18px;
+
+    .section-subtitle {
+      color: rgba($white, 0.7);
+    }
+
+    .section-text {
+      color: rgba($white, 0.78);
+      max-width: 42ch;
+    }
+
+    .btn {
+      justify-self: start;
+      background: $white;
+      color: $charcoal;
+      border: none;
+
+      &:is(:hover, :focus-visible) {
+        transform: translateY(-6px);
+      }
+    }
+  }
+
+  @include tablet-up {
+    .container {
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: stretch;
+    }
+
+    .cta-card {
+      align-content: center;
+    }
+  }
+
+  @include desktop-up {
+    .container {
+      gap: 40px;
+    }
+  }
+}
