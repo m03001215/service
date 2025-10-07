@@ -1,6 +1,6 @@
 {
   "name": "adex-agency-website",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": true,
   "packageManager": "yarn@1.22.19",
   "scripts": {
