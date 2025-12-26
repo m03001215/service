@@ -9,7 +9,7 @@ export const projectDetails: ProjectDetail[] = [
     subtitle:
       'Guided onboarding, behavioral lifecycle messaging, and roadmap support for a SaaS scale-up redefining activation.',
     description:
-      'Adex partnered with the product and lifecycle teams at Ligula to reinvent how new workspaces launch. We embedded a cross-functional squad spanning product strategy, UX, marketing automation, and engineering to deliver a step-change in onboarding performance.',
+      'Greenbillion partnered with the product and lifecycle teams at Ligula to reinvent how new workspaces launch. We embedded a cross-functional squad spanning product strategy, UX, marketing automation, and engineering to deliver a step-change in onboarding performance.',
     heroEyebrow: 'SaaS Platform',
     heroImage: '/assets/images/blog-1.jpg',
     category: 'SaaS Platform',
@@ -95,7 +95,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     testimonial: {
       quote:
-        'Adex embedded seamlessly with our team. They helped us uncover friction we did not know existed and rallied everyone around a clear activation vision. The uplift was visible within weeks.',
+        'Greenbillion embedded seamlessly with our team. They helped us uncover friction we did not know existed and rallied everyone around a clear activation vision. The uplift was visible within weeks.',
       person: 'Maya Chen',
       role: 'VP Product, Ligula',
     },
@@ -107,7 +107,7 @@ export const projectDetails: ProjectDetail[] = [
     subtitle:
       'Headless commerce architecture, localized storefronts, and ops enablement for a global retail rollout.',
     description:
-      'Nullam partnered with Adex to reinvent their flagship e-commerce experience while preparing the stack for rapid global expansion. We replatformed the storefront to a composable architecture, shipped new brand aesthetics, and enabled the internal team to launch in new regions on demand.',
+      'Nullam partnered with Greenbillion to reinvent their flagship e-commerce experience while preparing the stack for rapid global expansion. We replatformed the storefront to a composable architecture, shipped new brand aesthetics, and enabled the internal team to launch in new regions on demand.',
     heroEyebrow: 'Retail & E-Commerce',
     heroImage: '/assets/images/blog-2.jpg',
     category: 'Retail',
@@ -193,7 +193,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     testimonial: {
       quote:
-        'Adex delivered a modern stack and experience we can scale globally. Their team guided us through every decision and left us with the confidence to ship fast on our own.',
+        'Greenbillion delivered a modern stack and experience we can scale globally. Their team guided us through every decision and left us with the confidence to ship fast on our own.',
       person: 'Jonas Müller',
       role: 'Chief Digital Officer, Nullam',
     },
@@ -291,7 +291,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     testimonial: {
       quote:
-        'Our clinicians finally have a system that thinks the way they do. Adex translated complex requirements into an intuitive platform that instantly became mission critical.',
+        'Our clinicians finally have a system that thinks the way they do. Greenbillion translated complex requirements into an intuitive platform that instantly became mission critical.',
       person: 'Dr. Elena Ruiz',
       role: 'Chief Medical Information Officer, Ultricies',
     },
@@ -303,7 +303,7 @@ export const projectDetails: ProjectDetail[] = [
     subtitle:
       'A personalization engine and mobile design system powering over one million daily rituals for a VC-backed startup.',
     description:
-      'Habit partnered with Adex to accelerate their roadmap ahead of Series B. We crafted a new brand identity, modular mobile design system, and personalization engine that adapts to each user’s motivation style.',
+      'Habit partnered with Greenbillion to accelerate their roadmap ahead of Series B. We crafted a new brand identity, modular mobile design system, and personalization engine that adapts to each user’s motivation style.',
     heroEyebrow: 'Mobile & Consumer',
     heroImage: '/assets/images/blog-4.jpg',
     category: 'Mobile',
@@ -389,7 +389,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     testimonial: {
       quote:
-        'Adex elevated our product and how our team works. We shipped faster, learned faster, and built a brand people love engaging with every day.',
+        'Greenbillion elevated our product and how our team works. We shipped faster, learned faster, and built a brand people love engaging with every day.',
       person: 'Priya Patel',
       role: 'Co-founder & COO, Habit',
     },

@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 
 // Base SEO configuration
 export const siteConfig = {
-  name: 'Adex Digital Studio',
+  name: 'Greenbillion Digital Studio',
   description:
-    'Professional digital agency specializing in web development, design, and digital solutions. Transform your business with cutting-edge technology.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://adex-agency.com',
+    'Professional digital agency specializing in algorithmic trading, web and mobile development.',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://greenbillion.vercel.app',
   ogImage: '/assets/images/og-image.jpg',
   links: {
-    twitter: 'https://twitter.com/adexstudio',
-    github: 'https://github.com/adexstudio',
-    linkedin: 'https://linkedin.com/company/adexstudio',
+    twitter: 'https://twitter.com/greenbillion',
+    github: 'https://github.com/greenbillion',
+    linkedin: 'https://linkedin.com/company/greenbillion',
   },
 };
 
@@ -34,9 +34,9 @@ export const defaultMetadata: Metadata = {
     'React',
     'TypeScript',
   ],
-  authors: [{ name: 'Adex Digital Studio' }],
-  creator: 'Adex Digital Studio',
-  publisher: 'Adex Digital Studio',
+  authors: [{ name: 'Greenbillion Digital Studio' }],
+  creator: 'Greenbillion Digital Studio',
+  publisher: 'Greenbillion Digital Studio',
   formatDetection: {
     email: false,
     address: false,
@@ -63,7 +63,7 @@ export const defaultMetadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: '@adexstudio',
+    creator: '@greenbillion',
   },
   robots: {
     index: true,

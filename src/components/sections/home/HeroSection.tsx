@@ -34,12 +34,14 @@ const HeroSection: React.FC = () => {
       <div className="container">
         <div className="hero-content">
           <h1 className="h1 hero-title">
-            Crafting project specific solutions with expertise.
+            Algorithmic Trading Solutions & Web and Mobile Applications
+            Development Service
           </h1>
 
           <p className="hero-text">
-            We&apos;re a creative company that focuses on establishing long-term
-            relationships with customers.
+            Specialized in MetaTrader / MQL, TradingView / PineScript,
+            NinjaTrader, Python, and custom trading platforms. We also deliver
+            cutting-edge web and mobile applications to power your business.
           </p>
 
           <div className="btn-wrapper">
@@ -76,36 +78,42 @@ const HeroSection: React.FC = () => {
                     src="/assets/images/hero-slide-1.jpg"
                     width={575}
                     height={550}
-                    alt=""
+                    alt="Algorithmic trading platform with charts and trading indicators"
                     className="img-cover"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                    }}
                   />
                 </figure>
               </li>
 
               <li className="slider-item">
-                <div className="hero-card">
-                  <figure
-                    className="img-holder"
-                    style={
-                      {
-                        '--width': '575',
-                        '--height': '550',
-                      } as React.CSSProperties
-                    }
-                  >
-                    <Image
-                      src="/assets/images/hero-slide-2.jpg"
-                      width={575}
-                      height={550}
-                      alt="hero banner"
-                      className="img-cover"
-                    />
-                  </figure>
-
-                  <button className="play-btn" aria-label="play adex intro">
-                    <ion-icon name="play" aria-hidden={true}></ion-icon>
-                  </button>
-                </div>
+                <figure
+                  className="img-holder"
+                  style={
+                    {
+                      '--width': '575',
+                      '--height': '550',
+                    } as React.CSSProperties
+                  }
+                >
+                  <Image
+                    src="/assets/images/hero-slide-2.jpg"
+                    width={575}
+                    height={550}
+                    alt="Algorithmic trading systems and automated trading solutions"
+                    className="img-cover"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                    }}
+                  />
+                </figure>
               </li>
 
               <li className="slider-item">
@@ -122,8 +130,14 @@ const HeroSection: React.FC = () => {
                     src="/assets/images/hero-slide-3.jpg"
                     width={575}
                     height={550}
-                    alt=""
+                    alt="Web and mobile development services for trading applications"
                     className="img-cover"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                    }}
                   />
                 </figure>
               </li>

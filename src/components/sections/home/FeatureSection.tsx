@@ -21,18 +21,17 @@ const FeatureSection = () => {
 
         <div className="feature-content">
           <p className="section-subtitle" id="feautre-label">
-            Our Solutions
+            Our Technologies
           </p>
 
           <h2 className="h2 section-title">
-            We make your spending stress-free for you to have the perfect
-            control.
+            Comprehensive trading platforms and development technologies.
           </h2>
 
           <p className="section-text">
-            Cum sociis natoque penatibus et magnis dis parturient montes,
-            nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in,
-            egestas eget quam. Praesent commodo cursus.
+            We work with all major trading platforms and modern development
+            technologies to deliver cutting-edge solutions for algorithmic
+            trading, web applications, and mobile development.
           </p>
 
           <ul className="feature-list">
@@ -43,7 +42,8 @@ const FeatureSection = () => {
                 </div>
 
                 <span className="span">
-                  Aenean quam ornare. Curabitur blandit.
+                  MetaTrader 4/5 (MQL4/MQL5) - Expert Advisors, Indicators &
+                  Scripts
                 </span>
               </div>
             </li>
@@ -55,7 +55,7 @@ const FeatureSection = () => {
                 </div>
 
                 <span className="span">
-                  Nullam quis risus eget urna mollis ornare.
+                  TradingView PineScript - Custom Indicators & Strategies
                 </span>
               </div>
             </li>
@@ -67,7 +67,7 @@ const FeatureSection = () => {
                 </div>
 
                 <span className="span">
-                  Etiam porta euismod malesuada mollis.
+                  NinjaTrader & Python - Advanced Trading Systems & Backtesting
                 </span>
               </div>
             </li>
@@ -79,7 +79,7 @@ const FeatureSection = () => {
                 </div>
 
                 <span className="span">
-                  Vivamus sagittis lacus vel augue rutrum.
+                  Web & Mobile Development - Full-Stack Applications & APIs
                 </span>
               </div>
             </li>

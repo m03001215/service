@@ -66,14 +66,24 @@
 .slider-inner {
   border-radius: $radius-10;
   overflow: hidden;
+  width: 100%;
+  position: relative;
+  aspect-ratio: 575 / 550;
+  min-height: 400px;
+
+  @include tablet-up {
+    min-height: 550px;
+  }
 }
 
 .slider-container {
   position: relative;
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  align-items: stretch;
+  gap: 0;
   transition: $transition-2;
+  width: 100%;
+  height: 100%;
 }
 
 .slider-item {
@@ -82,6 +92,32 @@
   border-radius: $radius-10;
   overflow: hidden;
   flex-shrink: 0;
+  display: flex;
+  height: 100%;
+
+  figure {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  .img-holder {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-cover {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block;
+  }
 }
 
 .slider-btn {

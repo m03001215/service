@@ -72,12 +72,12 @@ const Footer = () => {
               src="/assets/images/logo-light.svg"
               width={74}
               height={24}
-              alt="Adex home"
+              alt="Greenbillion home"
             />
           </Link>
 
           <p className="footer-text">
-            &copy; 2022 codewithsadee. <br /> All rights reserved.
+            &copy; 2025 Greenbillion <br /> All rights reserved.
           </p>
 
           <ul className="social-list">
@@ -103,19 +103,19 @@ const Footer = () => {
 
           <li>
             <address className="footer-text">
-              Moonshine St. 14/05 Light City, London, United Kingdom
+              Angeles, Pampanga, Philippines
             </address>
           </li>
 
           <li>
             <Link href="mailto:info@email.com" className="footer-link">
-              info@email.com
+              dohn2050@gmail.com
             </Link>
           </li>
 
           <li>
             <Link href="tel:001234567890" className="footer-link">
-              00 (123) 456 78 90
+              +1 (437) 886-1160
             </Link>
           </li>
         </ul>

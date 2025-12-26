@@ -1,6 +1,6 @@
-# Adex Digital Studio - Agency Website
+# Greenbillion Digital Studio - Agency Website
 
-A modern, responsive agency website built with Next.js 14, TypeScript, and SCSS. This project showcases digital services, portfolio projects, and provides a professional online presence for Adex Digital Studio.
+A modern, responsive agency website built with Next.js 14, TypeScript, and SCSS. This project showcases digital services, portfolio projects, and provides a professional online presence for Greenbillion Digital Studio.
 
 ## 🚀 Features
 
@@ -220,8 +220,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-**Adex Digital Studio**
-- Website: [https://adex-agency.com](https://adex-agency.com)
+**Greenbillion Digital Studio**
+- Website: [https://greenbillion.com](https://greenbillion.com)
 - Email: info@email.com
 - Phone: 00 (123) 456 78 90
 
@@ -234,4 +234,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Built with ❤️ by [Adex Digital Studio](https://github.com/trinhquocthinh)
+Built with ❤️ by [Greenbillion Digital Studio](https://github.com/trinhquocthinh)

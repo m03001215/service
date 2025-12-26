@@ -102,7 +102,7 @@ const nextConfig = {
 
   // Environment variables that should be available on the client
   env: {
-    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://adex-agency.com',
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://greenbillion.vercel.app',
   },
 
   // Production source maps (disable for security, enable for debugging)

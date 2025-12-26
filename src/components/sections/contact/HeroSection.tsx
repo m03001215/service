@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section
       className="page-hero contact-hero has-bg-image"
-      aria-label="Contact Adex"
+      aria-label="Contact Greenbillion"
       style={{ backgroundImage: "url('/assets/images/hero-bg.jpg')" }}
     >
       <div className="overlay" aria-hidden="true" />

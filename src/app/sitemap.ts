@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adex-agency.com';
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://greenbillion.vercel.app';
 
   // Define your routes with their respective priorities and update frequencies
   const routes = [

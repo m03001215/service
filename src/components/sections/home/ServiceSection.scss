@@ -18,6 +18,9 @@
   padding: 40px;
   box-shadow: $shadow-2;
   border-radius: $radius-6;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   .card-icon {
     width: 60px;
@@ -41,6 +44,7 @@
   .card-text {
     color: $black-coral;
     line-height: 1.6;
+    flex: 1;
   }
 
   .btn-text {
@@ -48,7 +52,8 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
-    margin-block-start: 10px;
+    margin-block-start: auto;
+    padding-block-start: 10px;
     color: $violet-blue-crayola;
     font-weight: $fw-700;
     transition: $transition-1;
@@ -59,11 +64,31 @@
   }
 }
 
+// Ensure grid items stretch to equal height
+.service {
+  .grid-list {
+    align-items: stretch;
+
+    > li {
+      display: flex;
+      height: 100%;
+    }
+  }
+}
+
 // Responsive styles
+@include laptop-up {
+  .service {
+    .grid-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
 @include desktop-up {
   .service {
     .grid-list {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }

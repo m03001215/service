@@ -70,16 +70,16 @@ const Header = () => {
         <Link href="/" className="logo">
           <Image
             src="/assets/images/logo-light.svg"
-            width={74}
-            height={24}
-            alt="Adex home"
+            width={180}
+            height={28}
+            alt="Greenbillion home"
             className="logo-light"
           />
           <Image
             src="/assets/images/logo-dark.svg"
-            width={74}
-            height={24}
-            alt="Adex home"
+            width={180}
+            height={28}
+            alt="Greenbillion home"
             className="logo-dark"
           />
         </Link>
@@ -89,9 +89,9 @@ const Header = () => {
             <Link href="/" className="logo">
               <Image
                 src="/assets/images/logo-light.svg"
-                width={74}
-                height={24}
-                alt="Adex home"
+                width={180}
+                height={28}
+                alt="Greenbillion home"
               />
             </Link>
 
@@ -143,9 +143,9 @@ const Header = () => {
           </ul>
         </nav>
 
-        <Link href="/contact#quote" className="btn btn-primary">
+        {/* <Link href="/contact#quote" className="btn btn-primary">
           Free Trial
-        </Link>
+        </Link> */}
 
         <button
           className="nav-open-btn"

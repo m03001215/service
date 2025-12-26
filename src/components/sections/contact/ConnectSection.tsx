@@ -83,7 +83,9 @@ const ConnectSection = () => {
           <p className="section-subtitle" id="contact-title">
             Say hello
           </p>
-          <h2 className="h2 section-title">Connect with the Adex team.</h2>
+          <h2 className="h2 section-title">
+            Connect with the Greenbillion team.
+          </h2>
           <p className="section-text contact-intro">
             Prefer email? Reach out at{' '}
             <Link href="mailto:info@email.com" className="link-inline">

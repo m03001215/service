@@ -11,7 +11,7 @@ const AboutHeroSection = () => {
   return (
     <motion.section
       className="page-hero about-hero has-bg-image"
-      aria-label="About Adex"
+      aria-label="About Greenbillion"
       style={{ backgroundImage: "url('/assets/images/hero-bg.jpg')" }}
       initial="hidden"
       whileInView="visible"
@@ -22,7 +22,7 @@ const AboutHeroSection = () => {
 
       <motion.div className="container" variants={staggerContainer(0.18, 0.1)}>
         <motion.p variants={fadeIn('up', 24, 0.5)} className="section-subtitle">
-          About Adex
+          About Greenbillion
         </motion.p>
         <motion.h1 variants={fadeIn('up', 24, 0.6)} className="h1 page-title">
           Where strategy meets creativity.

@@ -9,11 +9,11 @@ const CTASection = () => {
     <section className="cta" aria-label="call to action">
       <div className="container">
         <h2 className="h2 section-title">
-          Join our community by using our services and grow your business.
+          Ready to build your trading indicator or strategy?
         </h2>
 
         <Link href="/contact#quote" className="btn btn-primary">
-          Try it For Free
+          Get Started Today
         </Link>
       </div>
     </section>

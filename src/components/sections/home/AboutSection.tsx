@@ -29,7 +29,8 @@ const AboutSection = () => {
           </p>
 
           <h2 className="h2 section-title">
-            We bring solutions to make life easier for our clients.
+            Algorithmic trading solutions and web & mobile development service
+            for your success.
           </h2>
 
           <ul>
@@ -50,15 +51,16 @@ const AboutSection = () => {
                       class="down"
                     />
 
-                    <span className="span h5">Professional Design</span>
+                    <span className="span h5">Multi-Platform Expertise</span>
                   </button>
                 </h3>
 
                 <p className="accordion-content">
-                  Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                  condimentum nibh, ut fermentum massa justo sit amet risus.
-                  Cras mattis consectetur purus sit amet fermentum. Praesent
-                  commodo cursus magna, vel.
+                  We specialize in MetaTrader (MQL4/MQL5), TradingView
+                  (PineScript), NinjaTrader (NinjaScript), QuantConnect, Python,
+                  and other leading trading platforms. Our team delivers custom
+                  Expert Advisors, indicators, strategies, and automated trading
+                  systems across all major platforms.
                 </p>
               </div>
             </li>
@@ -80,15 +82,14 @@ const AboutSection = () => {
                       class="down"
                     />
 
-                    <span className="span h5">Top-Notch Support</span>
+                    <span className="span h5">Full-Stack Development</span>
                   </button>
                 </h3>
 
                 <p className="accordion-content">
-                  Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                  condimentum nibh, ut fermentum massa justo sit amet risus.
-                  Cras mattis consectetur purus sit amet fermentum. Praesent
-                  commodo cursus magna, vel.
+                  Beyond trading systems, we build robust web and mobile
+                  applications for several industries including trading,
+                  finance, sports, healthcare, and more.
                 </p>
               </div>
             </li>
@@ -110,15 +111,15 @@ const AboutSection = () => {
                       class="down"
                     />
 
-                    <span className="span h5">Exclusive Assets</span>
+                    <span className="span h5">Proven Track Record</span>
                   </button>
                 </h3>
 
                 <p className="accordion-content">
-                  Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                  condimentum nibh, ut fermentum massa justo sit amet risus.
-                  Cras mattis consectetur purus sit amet fermentum. Praesent
-                  commodo cursus magna, vel.
+                  With extensive experience in algorithmic trading and software
+                  development, we&apos;ve helped traders and institutions build
+                  profitable systems. Our solutions are tested, optimized, and
+                  backed by comprehensive support and documentation.
                 </p>
               </div>
             </li>

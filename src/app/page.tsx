@@ -3,20 +3,22 @@ import type { Metadata } from 'next';
 import Layout from '@/components/Layout';
 import AboutSection from '@/components/sections/home/AboutSection';
 import CTASection from '@/components/sections/home/CTASection';
-import FeatureSection from '@/components/sections/home/FeatureSection';
 import HeroSection from '@/components/sections/home/HeroSection';
 import ProjectSection from '@/components/sections/home/ProjectSection';
 import ServiceSection from '@/components/sections/home/ServiceSection';
-import StatSection from '@/components/sections/home/StatSection';
+
+// eslint-disable-next-line sonarjs/no-commented-code
+// import FeatureSection from '@/components/sections/home/FeatureSection';
+// import StatSection from '@/components/sections/home/StatSection';
 
 export const metadata: Metadata = {
-  title: 'Adex • Digital Product Studio',
+  title: 'Greenbillion • Algorithmic Trading',
   description:
-    'Partner with Adex to design standout digital products, launch faster, and grow sustainably.',
+    'Partner with Greenbillion to develop and implement algorithmic trading strategies.',
   openGraph: {
-    title: 'Adex • Digital Product Studio',
+    title: 'Greenbillion • Algorithmic Trading',
     description:
-      'Partner with Adex to design standout digital products, launch faster, and grow sustainably.',
+      'Partner with Greenbillion to develop and implement algorithmic trading strategies.',
     images: ['/assets/images/hero-slide-1.jpg'],
   },
 };
@@ -28,8 +30,8 @@ export default function Home() {
         <HeroSection />
         <ServiceSection />
         <AboutSection />
-        <FeatureSection />
-        <StatSection />
+        {/* <FeatureSection /> */}
+        {/* <StatSection /> */}
         <ProjectSection />
         <CTASection />
       </article>

@@ -44,9 +44,9 @@ const ProjectSection = () => {
                 </h3>
 
                 <p className="card-text">
-                  A growth-stage SaaS team partnered with Adex to overhaul
-                  onboarding, increasing activation by 32% with a guided setup
-                  and behavioral messaging.
+                  A growth-stage SaaS team partnered with Greenbillion to
+                  overhaul onboarding, increasing activation by 32% with a
+                  guided setup and behavioral messaging.
                 </p>
 
                 <ul className="card-meta-list">
@@ -144,9 +144,9 @@ const ProjectSection = () => {
                 </h3>
 
                 <p className="card-text">
-                  Medisight partnered with Adex to unify clinician workflows,
-                  delivering predictive insights with 95% alert accuracy across
-                  42 hospitals.
+                  Medisight partnered with Greenbillion to unify clinician
+                  workflows, delivering predictive insights with 95% alert
+                  accuracy across 42 hospitals.
                 </p>
 
                 <ul className="card-meta-list">
@@ -194,9 +194,9 @@ const ProjectSection = () => {
                 </h3>
 
                 <p className="card-text">
-                  Ritualist Labs partnered with Adex to launch a personalization
-                  engine powering 1.2M daily streaks with adaptive routines and
-                  lifecycle automation.
+                  Ritualist Labs partnered with Greenbillion to launch a
+                  personalization engine powering 1.2M daily streaks with
+                  adaptive routines and lifecycle automation.
                 </p>
 
                 <ul className="card-meta-list">

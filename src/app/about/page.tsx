@@ -10,7 +10,13 @@ import AboutValuesSection from '@/components/sections/about/AboutValuesSection';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn more about Adex Digital Studio - our story, mission, and the team behind our success.',
+    'Learn more about Greenbillion - our story, mission, and the team behind our success.',
+  openGraph: {
+    title: 'Greenbillion • Algorithmic Trading',
+    description:
+      'Partner with Greenbillion to develop and implement algorithmic trading strategies.',
+    images: ['/assets/images/hero-slide-1.jpg'],
+  },
 };
 
 export default function About() {

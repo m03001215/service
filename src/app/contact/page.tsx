@@ -8,7 +8,13 @@ import HeroSection from '@/components/sections/contact/HeroSection';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    "Get in touch with Adex Digital Studio. Let's discuss your next digital project.",
+    "Get in touch with Greenbillion. Let's discuss your next algorithmic trading project.",
+  openGraph: {
+    title: 'Greenbillion • Algorithmic Trading',
+    description:
+      'Partner with Greenbillion to develop and implement algorithmic trading strategies.',
+    images: ['/assets/images/hero-slide-1.jpg'],
+  },
 };
 
 export default function Contact() {

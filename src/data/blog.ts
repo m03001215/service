@@ -16,7 +16,7 @@ export const blogPosts: BlogPostDetail[] = [
     dateLabel: '15 Sep 2024',
     author: 'Darius M.',
     authorBio:
-      'Darius leads lifecycle strategy at Adex. He pairs machine learning experimentation with creativity to craft responsible retention programs.',
+      'Darius leads lifecycle strategy at Greenbillion. He pairs machine learning experimentation with creativity to craft responsible retention programs.',
     readingTime: '10 minutes',
     topics: ['Lifecycle', 'Mobile Growth'],
     sections: [
@@ -112,7 +112,7 @@ export const blogPosts: BlogPostDetail[] = [
     dateLabel: '09 Aug 2024',
     author: 'Isabella R.',
     authorBio:
-      'Isabella leads experimentation programs at Adex. She previously launched growth teams at marketplaces serving over 30 million customers in EMEA.',
+      'Isabella leads experimentation programs at Greenbillion. She previously launched growth teams at marketplaces serving over 30 million customers in EMEA.',
     readingTime: '8 minutes',
     topics: ['Experimentation', 'Product Growth'],
     sections: [
@@ -121,7 +121,7 @@ export const blogPosts: BlogPostDetail[] = [
         heading: 'Define your ethical guardrails first',
         paragraphs: [
           'Responsible experimentation protects users and unlocks creativity. Establish bright-line rules for eligibility, frequency, and opt-outs before you run your first test. Document them publicly to keep teams aligned.',
-          'At Adex we help teams form an ethics council that reviews high-impact experiments, especially those involving pricing, privacy, or vulnerable segments.',
+          'At Greenbillion we help teams form an ethics council that reviews high-impact experiments, especially those involving pricing, privacy, or vulnerable segments.',
         ],
         aside: {
           type: 'list',
@@ -211,7 +211,7 @@ export const blogPosts: BlogPostDetail[] = [
     dateLabel: '28 Jun 2024',
     author: 'Zane L.',
     authorBio:
-      'Zane directs the design systems practice at Adex. He previously led component architecture at two Fortune 100 companies operating cross-continent squads.',
+      'Zane directs the design systems practice at Greenbillion. He previously led component architecture at two Fortune 100 companies operating cross-continent squads.',
     readingTime: '9 minutes',
     topics: ['Design Ops', 'Collaboration'],
     sections: [
@@ -219,7 +219,7 @@ export const blogPosts: BlogPostDetail[] = [
         id: 'source-of-intent',
         heading: 'Create a single source of intent',
         paragraphs: [
-          'Component libraries aren’t enough. You need a north-star narrative describing who the system serves, where it’s used, and how decisions are made. At Adex we co-create a product manifesto that orients every contribution back to user needs.',
+          'Component libraries aren’t enough. You need a north-star narrative describing who the system serves, where it’s used, and how decisions are made. At Greenbillion we co-create a product manifesto that orients every contribution back to user needs.',
           'This becomes the onboarding path for agencies, contractors, and vendors. Within two weeks they should know the tokens, component rules, and contribution path.',
         ],
         subsections: [
@@ -303,7 +303,7 @@ export const blogPosts: BlogPostDetail[] = [
     ],
     cta: {
       heading: 'Need a design system partner that can scale with you?',
-      buttonLabel: 'Co-create with Adex',
+      buttonLabel: 'Co-create with Greenbillion',
       buttonHref: '/contact#quote',
     },
   },
@@ -322,7 +322,7 @@ export const blogPosts: BlogPostDetail[] = [
     dateLabel: '12 Feb 2024',
     author: 'Tara V.',
     authorBio:
-      'Tara is a product partner at Adex coaching founding teams on discovery pipelines and traction modeling. Previously VP Product at two YC-backed startups.',
+      'Tara is a product partner at Greenbillion coaching founding teams on discovery pipelines and traction modeling. Previously VP Product at two YC-backed startups.',
     readingTime: '11 minutes',
     topics: ['Product Strategy', 'Analytics'],
     sections: [
@@ -331,7 +331,7 @@ export const blogPosts: BlogPostDetail[] = [
         heading: 'Start with qualitative leading signals',
         paragraphs: [
           'Before instrumenting dashboards, align on what progress looks like for your earliest cohorts. Are they exploring, activating, or compounding value? Use pre-launch interviews to develop moment maps that make it obvious which events signal forward motion.',
-          'At Adex we ask founders to anchor on a simple statement: “Users win when...” Then we instrument the behaviors that prove that statement true. Anything else is a vanity metric.',
+          'At Greenbillion we ask founders to anchor on a simple statement: “Users win when...” Then we instrument the behaviors that prove that statement true. Anything else is a vanity metric.',
         ],
         subsections: [
           {
