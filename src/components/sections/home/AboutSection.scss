@@ -2,6 +2,12 @@
 @import '../../../styles/mixins';
 
 .about {
+  margin-block-end: 80px;
+
+  @include tablet-up {
+    margin-block-end: 100px;
+  }
+
   .container {
     display: grid;
     gap: 50px;

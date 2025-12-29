@@ -20,10 +20,10 @@ const newsletterSchema = yup.object().shape({
 
 const Footer = () => {
   const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting },
+    // register,
+    // handleSubmit,
+    // reset,
+    // formState: { errors, isSubmitting },
   } = useForm<NewsletterFormData>({
     resolver: yupResolver(newsletterSchema),
     defaultValues: {
@@ -32,36 +32,32 @@ const Footer = () => {
   });
 
   const socialLinks: SocialLink[] = [
-    { href: 'https://facebook.com', icon: 'logo-facebook', label: 'Facebook' },
-    { href: 'https://twitter.com', icon: 'logo-twitter', label: 'Twitter' },
-    { href: 'https://dribbble.com', icon: 'logo-dribbble', label: 'Dribbble' },
     {
-      href: 'https://instagram.com',
-      icon: 'logo-instagram',
-      label: 'Instagram',
+      href: 'mailto:dohn2050@gmail.com',
+      icon: 'mail-outline',
+      label: 'GMail',
     },
-    { href: 'https://youtube.com', icon: 'logo-youtube', label: 'YouTube' },
+    {
+      href: 'https://www.linkedin.com/in/dohn-galzote-7030bb396',
+      icon: 'logo-linkedin',
+      label: 'LinkedIn',
+    },
+    {
+      href: 'https://t.me/greenbillion9',
+      icon: 'paper-plane-outline',
+      label: 'Telegram',
+    },
+    {
+      href: 'https://discord.gg/CTvSKCbfCt',
+      icon: 'logo-discord',
+      label: 'Discord',
+    },
+    {
+      href: 'https://www.fiverr.com/s/8zZzXpv',
+      icon: 'briefcase-outline',
+      label: 'Fiverr',
+    },
   ];
-
-  const onSubmit = async (data: NewsletterFormData) => {
-    try {
-      // Handle newsletter subscription logic here
-      // Example: await subscribeToNewsletter(data.email);
-
-      // Simulate API call with the email data
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      // Reset form on successful submission
-      reset();
-
-      // You can add success notification here
-      alert(`Successfully subscribed ${data.email} to newsletter!`);
-    } catch (error) {
-      // You can add error notification here
-      console.error('Newsletter subscription failed:', error);
-      alert('Failed to subscribe. Please try again.');
-    }
-  };
 
   return (
     <footer className="footer">
@@ -70,7 +66,7 @@ const Footer = () => {
           <Link href="/" className="logo">
             <Image
               src="/assets/images/logo-light.svg"
-              width={74}
+              width={165}
               height={24}
               alt="Greenbillion home"
             />
@@ -96,7 +92,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <ul className="footer-list">
+        {/* <ul className="footer-list">
           <li>
             <p className="h4 footer-list-title">Get in Touch</p>
           </li>
@@ -118,9 +114,9 @@ const Footer = () => {
               +1 (437) 886-1160
             </Link>
           </li>
-        </ul>
+        </ul> */}
 
-        <ul className="footer-list">
+        {/* <ul className="footer-list">
           <li>
             <p className="h4 footer-list-title">Learn More</p>
           </li>
@@ -160,9 +156,9 @@ const Footer = () => {
               Privacy Policy
             </Link>
           </li>
-        </ul>
+        </ul> */}
 
-        <div className="footer-list">
+        {/* <div className="footer-list">
           <p className="h4 footer-list-title">Our Newsletter</p>
 
           <p className="footer-text">
@@ -191,7 +187,7 @@ const Footer = () => {
               {isSubmitting ? 'Joining...' : 'Join'}
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

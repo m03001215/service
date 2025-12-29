@@ -45,9 +45,9 @@ const HeroSection: React.FC = () => {
           </p>
 
           <div className="btn-wrapper">
-            <a href="services" className="btn btn-primary">
+            {/* <a href="services" className="btn btn-primary">
               Explore Now
-            </a>
+            </a> */}
 
             <a href="contact" className="btn btn-outline">
               Contact Us

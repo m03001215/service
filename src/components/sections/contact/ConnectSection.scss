@@ -181,6 +181,38 @@
       }
     }
 
+    .form-message {
+      padding: 16px 20px;
+      border-radius: $radius-6;
+      font-size: $fs-7;
+      font-weight: $fw-700;
+      line-height: 1.6;
+      animation: slideIn 0.3s ease-out;
+
+      &.success {
+        background-color: rgba(76, 175, 80, 0.1);
+        color: #4caf50;
+        border: 1px solid rgba(76, 175, 80, 0.3);
+      }
+
+      &.error {
+        background-color: rgba(255, 107, 107, 0.1);
+        color: #ff6b6b;
+        border: 1px solid rgba(255, 107, 107, 0.3);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .btn {
       justify-self: flex-start;
       background-color: hsl(234, 50%, 64%);

@@ -2,6 +2,7 @@
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import Link from 'next/link';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
@@ -21,7 +22,6 @@ const projectContactSchema = yup.object().shape({
     .required('Email is required')
     .email('Please enter a valid email address')
     .trim(),
-  company: yup.string().optional().trim(),
   budget: yup
     .string()
     .required('Please select a budget range')
@@ -35,6 +35,11 @@ const projectContactSchema = yup.object().shape({
 });
 
 const ConnectSection = () => {
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
   const {
     register,
     handleSubmit,
@@ -45,7 +50,6 @@ const ConnectSection = () => {
     defaultValues: {
       name: '',
       email: '',
-      company: '',
       budget: '',
       details: '',
       nda: false,
@@ -54,23 +58,44 @@ const ConnectSection = () => {
 
   const onSubmit = async (data: ProjectContactFormData) => {
     try {
-      // Handle form submission logic here
-      // Example: await submitProjectContact(data);
+      setSubmitStatus({ type: null, message: '' });
 
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit request');
+      }
 
       // Reset form on successful submission
       reset();
+      setSubmitStatus({
+        type: 'success',
+        message:
+          result.message ||
+          `Thank you ${data.name}! Your request has been submitted successfully. We will contact you at ${data.email} within one business day.`,
+      });
 
-      // You can add success notification here
-      alert(
-        `Thank you ${data.name}! Your request has been submitted successfully. We will contact you at ${data.email} within one business day.`
-      );
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus({ type: null, message: '' });
+      }, 5000);
     } catch (error) {
-      // You can add error notification here
       console.error('Form submission error:', error);
-      alert('Failed to submit request. Please try again.');
+      setSubmitStatus({
+        type: 'error',
+        message:
+          error instanceof Error
+            ? error.message
+            : 'Failed to submit request. Please try again.',
+      });
     }
   };
   return (
@@ -80,54 +105,119 @@ const ConnectSection = () => {
     >
       <div className="container contact-grid">
         <div className="contact-card">
-          <p className="section-subtitle" id="contact-title">
-            Say hello
-          </p>
           <h2 className="h2 section-title">
             Connect with the Greenbillion team.
           </h2>
           <p className="section-text contact-intro">
-            Prefer email? Reach out at{' '}
-            <Link href="mailto:info@email.com" className="link-inline">
-              info@email.com
-            </Link>{' '}
-            or call us directly at{' '}
-            <Link href="tel:001234567890" className="link-inline">
-              00 (123) 456 78 90
-            </Link>
-            . Our global studio spans three continents with specialists ready to
-            join your next build.
+            Get in touch with us through any of the channels below. We&apos;re
+            here to help with your algorithmic trading and web & mobile
+            applications development needs.
           </p>
 
           <ul className="contact-list">
             <li>
               <div className="icon-badge" aria-hidden="true">
-                <ion-icon name="time-outline"></ion-icon>
+                <ion-icon name="calendar-outline"></ion-icon>
               </div>
               <div>
-                <p className="card-title">Hours</p>
-                <p className="card-text">Mon – Fri, 8:30 AM to 7:00 PM GMT</p>
-              </div>
-            </li>
-            <li>
-              <div className="icon-badge" aria-hidden="true">
-                <ion-icon name="globe-outline"></ion-icon>
-              </div>
-              <div>
-                <p className="card-title">Locations</p>
+                <p className="card-title">Schedule Meeting</p>
                 <p className="card-text">
-                  London • Berlin • Singapore • Remote
+                  <Link
+                    href="https://calendar.app.google/H9cQTgVuuWMgCb6T8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-inline"
+                  >
+                    Schedule meeting with Google Calendar
+                  </Link>
                 </p>
               </div>
             </li>
             <li>
               <div className="icon-badge" aria-hidden="true">
-                <ion-icon name="chatbubbles-outline"></ion-icon>
+                <ion-icon name="mail-outline"></ion-icon>
               </div>
               <div>
-                <p className="card-title">Slack community</p>
+                <p className="card-title">Gmail</p>
                 <p className="card-text">
-                  Join practitioners swapping learnings in real time.
+                  <Link
+                    href="mailto:dohn2050@gmail.com"
+                    className="link-inline"
+                  >
+                    dohn2050@gmail.com
+                  </Link>
+                </p>
+              </div>
+            </li>
+            <li>
+              <div className="icon-badge" aria-hidden="true">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </div>
+              <div>
+                <p className="card-title">LinkedIn</p>
+                <p className="card-text">
+                  <Link
+                    href="https://www.linkedin.com/in/dohn-galzote-7030bb396"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-inline"
+                  >
+                    Connect on LinkedIn
+                  </Link>
+                </p>
+              </div>
+            </li>
+            <li>
+              <div className="icon-badge" aria-hidden="true">
+                <ion-icon name="paper-plane-outline"></ion-icon>
+              </div>
+              <div>
+                <p className="card-title">Telegram</p>
+                <p className="card-text">
+                  <Link
+                    href="https://t.me/greenbillion9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-inline"
+                  >
+                    @greenbillion9
+                  </Link>
+                </p>
+              </div>
+            </li>
+            <li>
+              <div className="icon-badge" aria-hidden="true">
+                <ion-icon name="logo-discord"></ion-icon>
+              </div>
+              <div>
+                <p className="card-title">Discord</p>
+                <p className="card-text">
+                  <Link
+                    href="https://discord.gg/CTvSKCbfCt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-inline"
+                  >
+                    Join our Discord server
+                  </Link>
+                </p>
+              </div>
+            </li>
+            <li>
+              <div className="icon-badge" aria-hidden="true">
+                <ion-icon name="briefcase-outline"></ion-icon>
+              </div>
+              <div>
+                <p className="card-title">Fiverr</p>
+                <p className="card-text">
+                  <Link
+                    href="https://www.fiverr.com/s/8zZzXpv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-inline"
+                  >
+                    Connect on Fiverr
+                  </Link>
                 </p>
               </div>
             </li>
@@ -143,12 +233,8 @@ const ConnectSection = () => {
           <div className="form-header">
             <h3 className="h3">Start a project conversation</h3>
             <p className="section-text">
-              Tell us about your product, timeline, and the outcomes you’re
+              Tell us about your project, timeline, and the outcomes you’re
               targeting.
-            </p>
-            <p className="response-time">
-              We respond within one business day. Need a faster kickoff? Leave a
-              note below and we’ll prioritize your request.
             </p>
           </div>
 
@@ -186,22 +272,6 @@ const ConnectSection = () => {
             </div>
 
             <div className="form-field">
-              <label className="form-label" htmlFor="contact-company">
-                Company
-              </label>
-              <input
-                type="text"
-                id="contact-company"
-                placeholder="Your company"
-                className={`input-field ${errors.company ? 'error' : ''}`}
-                {...register('company')}
-              />
-              {errors.company && (
-                <span className="error-message">{errors.company.message}</span>
-              )}
-            </div>
-
-            <div className="form-field">
               <label className="form-label" htmlFor="contact-budget">
                 Estimated budget
               </label>
@@ -211,10 +281,10 @@ const ConnectSection = () => {
                 {...register('budget')}
               >
                 <option value="">Choose an option</option>
-                <option value="50-100">$50k – $100k</option>
-                <option value="100-250">$100k – $250k</option>
-                <option value="250-500">$250k – $500k</option>
-                <option value="500+">$500k+</option>
+                <option value="50-1000">$50 – $1000</option>
+                <option value="1000-2000">$1000 – $2000</option>
+                <option value="2000-5000">$2000 – $5000</option>
+                <option value="5000+">$5000+</option>
               </select>
               {errors.budget && (
                 <span className="error-message">{errors.budget.message}</span>
@@ -238,10 +308,21 @@ const ConnectSection = () => {
             )}
           </div>
 
-          <label className="checkbox" htmlFor="contact-nda">
+          {/* <label className="checkbox" htmlFor="contact-nda">
             <input type="checkbox" id="contact-nda" {...register('nda')} />
             <span>I&apos;d like to start with an NDA.</span>
-          </label>
+          </label> */}
+
+          {submitStatus.type && (
+            <div
+              className={`form-message ${
+                submitStatus.type === 'success' ? 'success' : 'error'
+              }`}
+              role="alert"
+            >
+              {submitStatus.message}
+            </div>
+          )}
 
           <button
             type="submit"

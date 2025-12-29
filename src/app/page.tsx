@@ -4,12 +4,12 @@ import Layout from '@/components/Layout';
 import AboutSection from '@/components/sections/home/AboutSection';
 import CTASection from '@/components/sections/home/CTASection';
 import HeroSection from '@/components/sections/home/HeroSection';
-import ProjectSection from '@/components/sections/home/ProjectSection';
 import ServiceSection from '@/components/sections/home/ServiceSection';
 
 // eslint-disable-next-line sonarjs/no-commented-code
 // import FeatureSection from '@/components/sections/home/FeatureSection';
 // import StatSection from '@/components/sections/home/StatSection';
+// import ProjectSection from '@/components/sections/home/ProjectSection';
 
 export const metadata: Metadata = {
   title: 'Greenbillion • Algorithmic Trading',
@@ -32,7 +32,7 @@ export default function Home() {
         <AboutSection />
         {/* <FeatureSection /> */}
         {/* <StatSection /> */}
-        <ProjectSection />
+        {/* <ProjectSection /> */}
         <CTASection />
       </article>
     </Layout>

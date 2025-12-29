@@ -11,7 +11,7 @@ const faqItems = [
     id: 'contact-start-date',
     title: 'How soon can we begin?',
     content:
-      'After a short discovery call we can usually mobilize a squad within two weeks. Tight timelines? Let us know and we’ll share a rapid kickoff plan.',
+      'After a short discovery call, we can usually begin working on the project.',
   },
   {
     id: 'contact-collaboration',
@@ -23,7 +23,7 @@ const faqItems = [
     id: 'contact-post-launch',
     title: 'Do you handle post-launch optimization?',
     content:
-      'Yes. Our optimization labs offer ongoing experimentation, analytics, and engineering support to keep your product learning and improving.',
+      'Yes. We offer ongoing experimentation, analytics, and engineering support to keep your product learning and improving.',
   },
 ];
 
@@ -43,7 +43,7 @@ const FAQSection = () => {
             Answers to common partnership questions.
           </h2>
           <p className="section-text">
-            Here’s what teams typically ask before we collaborate. Not seeing
+            Here’s what clients typically ask before we collaborate. Not seeing
             your question? Drop it in the message above and we’ll include it in
             our first reply.
           </p>

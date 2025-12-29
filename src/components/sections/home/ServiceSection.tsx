@@ -31,8 +31,8 @@ const ServiceSection = () => {
                 Backtesting, optimization, and automated trading solutions.
               </p>
 
-              <Link href="/services#metatrader" className="btn-text">
-                <span className="span">Learn More</span>
+              <Link href="contact" className="btn-text">
+                <span className="span">Contact Us</span>
 
                 <ion-icon name="arrow-forward-outline" aria-hidden={true} />
               </Link>
@@ -52,8 +52,8 @@ const ServiceSection = () => {
                 Backtesting, alerts, webhooks, and automated trading solutions.
               </p>
 
-              <Link href="/services#tradingview" className="btn-text">
-                <span className="span">Learn More</span>
+              <Link href="contact" className="btn-text">
+                <span className="span">Contact Us</span>
 
                 <ion-icon name="arrow-forward-outline" aria-hidden={true} />
               </Link>
@@ -74,8 +74,8 @@ const ServiceSection = () => {
                 automated trading solutions.
               </p>
 
-              <Link href="/services#ninjatrader" className="btn-text">
-                <span className="span">Learn More</span>
+              <Link href="contact" className="btn-text">
+                <span className="span">Contact Us</span>
 
                 <ion-icon name="arrow-forward-outline" aria-hidden={true} />
               </Link>
@@ -96,8 +96,8 @@ const ServiceSection = () => {
                 and quantitative research solutions.
               </p>
 
-              <Link href="/services#quantconnect" className="btn-text">
-                <span className="span">Learn More</span>
+              <Link href="contact" className="btn-text">
+                <span className="span">Contact Us</span>
 
                 <ion-icon name="arrow-forward-outline" aria-hidden={true} />
               </Link>
@@ -118,8 +118,8 @@ const ServiceSection = () => {
                 traders.
               </p>
 
-              <Link href="/services#python" className="btn-text">
-                <span className="span">Learn More</span>
+              <Link href="contact" className="btn-text">
+                <span className="span">Contact Us</span>
 
                 <ion-icon name="arrow-forward-outline" aria-hidden={true} />
               </Link>
@@ -139,8 +139,8 @@ const ServiceSection = () => {
                 including trading, finance, sports, healthcare, and more.
               </p>
 
-              <Link href="/services#web-mobile" className="btn-text">
-                <span className="span">Learn More</span>
+              <Link href="contact" className="btn-text">
+                <span className="span">Contact Us</span>
 
                 <ion-icon name="arrow-forward-outline" aria-hidden={true} />
               </Link>

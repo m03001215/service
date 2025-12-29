@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import './HeroSection.scss';
 
 const HeroSection = () => {
@@ -16,22 +14,6 @@ const HeroSection = () => {
         <h1 className="h1 page-title">
           We’d love to hear about your next challenge.
         </h1>
-        <p className="section-text">
-          Share a few details about what you’re working on and we’ll align you
-          with the right specialists within one business day.
-        </p>
-
-        <nav className="breadcrumb" aria-label="Breadcrumb">
-          <Link href="/" className="breadcrumb-link">
-            Home
-          </Link>
-          <span className="breadcrumb-divider" aria-hidden="true">
-            /
-          </span>
-          <span className="breadcrumb-current" aria-current="page">
-            Contact
-          </span>
-        </nav>
       </div>
     </section>
   );
